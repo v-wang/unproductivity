@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'home/index' => 'home#index'
+
+  post '/show' => 'home#show'
+
   get 'users/index'
 
   get 'users/new'
