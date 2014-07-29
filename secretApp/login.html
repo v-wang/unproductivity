@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Project U</title>
+	<link rel="stylesheet" href="styles/reset.css">
+	<link rel="stylesheet" href="styles/desktop.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway:800,400' rel='stylesheet' type='text/css'>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	 <script>
+	 	$(document).ready(function(){
+	 		$("#createaccount_button").click(function(){
+	 			$("#login_form").slideUp();
+	 			$("#signup_form").delay(500).animate({height:'show'});
+	 		});
+	 	});
+	 </script>
+</head>
+<body>
+	<div id="login_maincontainer">
+		<header>
+			<h1>Mach Mail</h1>
+			<nav>
+				<ul>
+					<li>About Mail</li>
+					<li>Features</li>
+					<li>Get the App</li>
+					<li>Help</li>
+				</ul>
+			</nav>
+		</header>
+		<div id="login_contentholder">
+			<div id="login_adspace">
+				<h2>Slackr.</h2>
+				<h4>READ WHAT YOU WANT TO READ</h4>
+				<div id="login_sub_ad_box" align="center">
+					<h5>- FIND -</h5>
+					<h5>- READ -</h5>
+					<h5>- SLACK -</h5>
+				</div>
+				<div id="login_ad_button" align="center">Sign up now</div>
+			</div>
+			<div id="login_form" align="center">
+				<h1>Mach Mail</h1>
+				<form action="">
+					<input type="text" id="email_id_box" name="email" placeholder="Mach Mail ID">
+					<input type="password" id="password_box" name="password" placeholder="Password"><br>
+					<div id="login_checkbox"><input type="checkbox"  name="keepme_signedin">Keep me signed in</div>
+					<br>
+					<input type="submit" id="login_submit_box" name="submit_button" value="Sign In">
+				</form>
+				<br>
+				<br>
+				<h6> - OR - </h6>
+				<div id="login_createaccount">
+					<div id="createaccount_button">Create New Account</div>
+				</div>
+				<p>Sign in with <a href="https://www.facebook.com">Facebook</a> or <a href="https://www.google.com">Google</a></p>
+			</div>
+			<div id="signup_form" align="center">
+				<h1>Mach Mail</h1>
+				<h3>Get started with your new Mach speed mail!</h3>
+				<form>
+					<input type="text" id="signup_email" name="signup_email" placeholder="email"><br>
+					<input type="password" id="signup_password" name="signup_password" placeholder="password">
+					<input type="text" id="signup_fname" name="signup_fname" placeholder="first name"><br>
+					<input type="text" id="signup_lname" name="signup_lname" placeholder="last name"><br>
+					<input type="submit" id="signup_submit_box" name="signup_submit_box" value="Sign Up">
+				</form>
+			</div>
+		</div>
+		<footer align="center">
+			<h5>Terms</h5>
+			<h5>|</h5>
+			<h5>Privacy</h5>
+		</footer>
+	</div>
+</body>
+</html>
