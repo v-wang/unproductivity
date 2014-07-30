@@ -53,10 +53,24 @@ class HomeController < ApplicationController
      end
 
      @articles = []
-     for a in (0...news_provider.css(handle).length)
-     	
-     	@articles << news_provider.css(handle)[a].text
- 
+     if pro != "mash"
+	     for a in (0...news_provider.css(handle).length)
+	     	
+	     	@articles << news_provider.css(handle)[a].text
+	 
+	     end
+     else
+     	mash = open("http://mashable.com/stories.json")
+     	mmash = JSON.parse(mash.read)
+     	for a in mmash["new"]
+     		@articles << a["title"]
+     	end
+     	for a in mmash["rising"]
+     		@articles << a["title"]
+     	end
+     	for a in mmash["hot"]
+     		@articles << a["title"]
+     	end
      end
 
     
@@ -89,11 +103,18 @@ class HomeController < ApplicationController
     else
     url = bloomberg + news_provider.css(handle)[selected][:href]
     end	
+    # if pro != "mash"
     body_json = open("http://api.diffbot.com/v3/article?token=8de6c6c3e5fcec13f7b786b833bb35f7&url=#{url}")
     @body = JSON.parse(body_json.read)
     @text = @body["objects"][0]["text"]
     @title = @body["objects"][0]["title"]
     @image = @body["objects"][0]["images"][0]["url"]
+    #else
+    # mash = open("http://mashable.com/stories.json")
+    # mmash = JSON.parse(mash.read)
+    # @text = @body["objects"][0]["text"]
+    # @title = @body["objects"][0]["title"]
+    # @image = @body["objects"][0]["images"][0]["url"]
 
     puts "**************#{pro} & #{handle}***********"
 
