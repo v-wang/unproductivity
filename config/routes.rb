@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   get 'home/index' => 'home#index'
 
+  get 'home/mach' => 'home#machmail'
+
   post '/show' => 'home#show'
+
+  post '/machshow' => 'home#machshow'
 
   get 'users/index'
 
