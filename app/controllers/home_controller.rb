@@ -1,6 +1,11 @@
 require 'open-uri'
 require 'JSON'
 class HomeController < ApplicationController
+	cnn="http://www.cnn.com"
+	huffP = "http://www.huffintonpost.com"
+	nyt = "http://www.nytimes.com"
+	wired = "http://www.wired.com"	
+	bloomberg = "http://www.bloomberg.com"
   def index
      huffpost = Nokogiri::HTML(open('http://www.huffingtonpost.com'))
      @articles = []

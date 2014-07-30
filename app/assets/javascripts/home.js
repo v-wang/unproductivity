@@ -31,7 +31,6 @@ $(document).ready(function(){
      
       $("#remove").on("click", function(){
         $("#showup").remove();
-        $("#articleBody").hide();
         $("#inbox").show();
       });
 function clickable() {
@@ -66,8 +65,7 @@ function clickable() {
     for(j=0; j<myArray.length; j++){
       
       $(myArray[j]).on("click", function(){
-        $("#inbox").hide();
-        $("#articleBody").show();
+        $("#inbox").hide(); 
         $("#articleBody").append("<img src='/images/ajax-loader.gif' id='loader' >");
         $.ajax({
                 type: 'POST',
