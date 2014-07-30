@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'home/mach' => 'home#machmail'
 
+  get 'home/mach/:provider' => 'home#machmail'
+
   post '/show' => 'home#show'
 
   post '/machshow' => 'home#machshow'
