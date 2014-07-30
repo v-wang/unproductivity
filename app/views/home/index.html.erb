@@ -1,0 +1,64 @@
+
+<head>
+	<meta charset="UTF-8">
+	<title>Outlook</title>
+	
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  	
+</head>
+<body>
+	<div id="outlook_maincontainer">
+		<div id="outlook_topbar">
+			<img src="/images/outlook_topbar.png" alt="">
+		</div>
+		<div id="outlook_mainbody_container">
+			<div id="outlook_left_emailfolders">
+				<img src="/images/outlook_leftbar.png" alt="">
+			</div>
+			<div id="outlook_email_inbox_list">
+				<div>
+					<div class="email_article_source" id="reddit_button">
+						<h3><img id="arrow" src="/images/arrow.png" alt="">Huff Post</h3>
+					</div>	
+					<div class="article_source_dropdown" id="reddit_articles">
+						<ul>
+						    <% i = 0 %>
+							<% @articles.each do |art| %>
+							<% if art != "" && art[0..3] != "More" %>
+							<%= "<li id='art_#{i}' class='articles'> #{art} </li>".html_safe %>
+							<% end %>
+							<% i += 1 %>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+				<div>
+					<div class="email_article_source" id="mashable_button">
+						<h3>MASHABLE</h3>
+					</div>	
+					<div class="article_source_dropdown" id="mashable_articles">
+						<ul>
+							<li>test3</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="outlook_mainbody_content">
+				<div id="outlook_email_topbar">
+					<h2>News Title</h2>
+					<h3>Huff Post</h3>
+					<h4>Sent: </h4>
+					<h4>To:</h4>
+				</div>
+				<div id="outlook_email_body">
+					
+
+				</div>
+			</div>
+		</div>
+		<div id="outlook_bottombar">
+			<img src="/images/outlook_bottombar.png" alt="">
+		</div>
+	</div>
+</body>
+</html>
