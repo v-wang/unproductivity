@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+ <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,6 +62,7 @@
               <ul >
                <li class="dropdownItem"><a href="/home/mach/huffP">Huffington Post</a></li>
                 <li class="dropdownItem"><a href="/home/mach/mash">Mashable</a></li>
+                <li class="dropdownItem"><a href="/home/mach/bloomberg">Bloomberg</a></li>
                 <li class="dropdownItem"><a href="/home/mach/wired">Wired</a></li>
                 <li class="dropdownItem"><a href="/home/mach/nyt">New York Times</a></li>
                 <li class="dropdownItem">Saved</li>
@@ -117,7 +116,7 @@
 
                     <% i = 0 %>
                     <% @articles.each do |art| %>
-                    <% if art != "" && art[0..3] != "More" %>
+                    <% if art != "" && art[0..3] != "More" && art.length > 19 %>
                     <%= "<tr><td><input type='checkbox' class='myCheckbox'></td>".html_safe %>
                     <%= "<td>#{['Abraham Lincoln','Gerald Ford','George Washington','John Adams','Bill Clinton','George Bush','Jimmy Carter','Barack Obama','Ronald Regan'][rand(9)]}</td>".html_safe %>
                     <%= "<td id='art_#{i}' class='articles'> #{art} </td>".html_safe %>
@@ -147,4 +146,4 @@
     <script src="/assets/docs.min.js"></script>
     <!--<script src="/assets/machmail.js"></script>-->
   </body>
-</html>
+
