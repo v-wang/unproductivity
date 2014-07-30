@@ -1,5 +1,6 @@
 $(document).on('ready page:load', function () {
 
+
 	$(".dropdownTitle").is(":hidden");
   
 	// This slides the sidebar menus up and down
