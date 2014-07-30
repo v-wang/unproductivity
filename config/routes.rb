@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'home/mach' => 'home#machmail'
 
+  get 'home/mach/:provider' => 'home#machmail'
+
   post '/show' => 'home#show'
 
   post '/machshow' => 'home#machshow'
@@ -16,6 +18,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'users#index'
+
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

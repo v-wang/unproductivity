@@ -1,11 +1,6 @@
 require 'open-uri'
 require 'JSON'
 class HomeController < ApplicationController
-	cnn="http://www.cnn.com"
-	huffP = "http://www.huffintonpost.com"
-	nyt = "http://www.nytimes.com"
-	wired = "http://www.wired.com"	
-	bloomberg = "http://www.bloomberg.com"
   def index
      huffpost = Nokogiri::HTML(open('http://www.huffingtonpost.com'))
      @articles = []
@@ -33,14 +28,32 @@ class HomeController < ApplicationController
   end
 
   def machmail
-  	huffpost = Nokogiri::HTML(open('http://www.huffingtonpost.com'))
+  	cnn="http://www.cnn.com"
+	huffP = "http://www.huffingtonpost.com"
+	nyt = "http://www.nytimes.com"
+	wired = "http://www.wired.com"	
+	bloomberg = "http://www.bloomberg.com"
+  	 pro = params[:provider]
+
+  	 if pro == "nyt"
+     news_provider = Nokogiri::HTML(open(nyt))
+  	 else
+  	 news_provider = Nokogiri::HTML(open('http://www.huffingtonpost.com'))
+     end
+     
+     handle = "h4 a"
+     if pro == "nyt"
+     	handle = "h2 a"
+     end
+
      @articles = []
-     for a in (0...huffpost.css("h4 a").length)
+     for a in (0...news_provider.css(handle).length)
      	
-     	@articles << huffpost.css("h4 a")[a].text
+     	@articles << news_provider.css(handle)[a].text
  
      end
 
+    
 
   end
 
