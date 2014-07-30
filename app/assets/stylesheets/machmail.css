@@ -26,6 +26,13 @@ td:hover {
 	cursor:pointer;
 }
 
+.tableHeader{
+	font-weight: 600;
+	padding: 0;
+	margin: 0 0 2px 0;
+	font-size: 11pt;
+}
+
 .form-control, .btn-default {
 	-moz-border-radius: 0px;
 	-webkit-border-radius: 0px;
@@ -71,6 +78,7 @@ input[type="checkbox"]:focus {
 	border: 1px solid #dddddd;
 	background-color: #e8e8e8;
 	font-weight: bold;
+	cursor: default;
 }
 
 #filter {
@@ -84,6 +92,7 @@ input[type="checkbox"]:focus {
 	box-shadow: none;
 	padding: 4px;
 	border: 1px solid #dddddd;
+	cursor: default;
 }
 
 #filterBar:focus, #filterBar:hover {
@@ -127,7 +136,19 @@ input[type="checkbox"]:focus {
 	/*border-bottom: 1px solid #dddddd;*/
 	margin: 8px 0;
 /*	padding: 8px 0;*/
+	display: inline-block;
+	float: left;
 }
+
+.emailIcons {
+	display: inline-block;
+	float: right;
+	padding-top: 5px;
+}
+
+#articleBody .fa {
+ 	padding-left: 5px;
+ }
 
 #articleBody h5 {
 	color: gray;
@@ -135,6 +156,7 @@ input[type="checkbox"]:focus {
 	font-weight: 600;
 	text-transform: none;
 	margin: 0 0 6px 0;
+	clear: both;
 }
 
 
@@ -160,11 +182,6 @@ input[type="checkbox"]:focus {
 	}
 }
 
-@media (max-width: 455px) {
-	#refresh, #delete {
-		display: none;
-	}
-}
 
 
   

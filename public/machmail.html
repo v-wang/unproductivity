@@ -15,6 +15,7 @@
     <link href="/assets/bootstrap.css" media="screen" rel="stylesheet">
     <link href="/assets/dashboard.css" media="screen" rel="stylesheet">
     <link href="/assets/machmail.css" media="screen" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -38,11 +39,15 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li ><a href="#">user.name@machmail.com</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">user.name@machmail.com <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Edit Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Sign Out</a></li>
+              </ul>
+            </li>
           </ul>
-          <!-- <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form> -->
         </div>
       </div>
     </div>
@@ -62,6 +67,7 @@
                 <li class="dropdownItem">Mashable</li>
                 <li class="dropdownItem">Wired</li>
                 <li class="dropdownItem">New York Times</li>
+                <li class="dropdownItem">Saved</li>
               </ul>
             <li>Trash</li>
             <li>Spam</li>
@@ -107,9 +113,9 @@
 
           <div id="mailboxTools">
             <div class="buttonWrapper">
-              <input class="btn btn-default" type="button" value="Compose">
-              <input class="btn btn-default" type="button" value="Refresh" id="refresh">
-              <input class="btn btn-default" type="button" value="Delete" id="delete">
+              <div class="btn btn-default" type="button" value="Refresh" id="refresh"><i class="fa fa-refresh fa-lg"></i></div>
+              <div class="btn btn-default" type="button" value="Compose"><i class="fa fa-pencil fa-lg"></i></div>
+              <div class="btn btn-default" type="button" value="Delete" id="delete"><i class="fa fa-trash-o fa-lg"></i></div>
             </div>
             <div class="buttonWrapper" id="nextEmails">
               <p>1 of 100</p>
@@ -125,9 +131,9 @@
               <thead>
                 <tr>
                   <th class="col-sm-1"><input type="checkbox" class="myCheckbox" id="selectAll"></th>
-                  <th class="col-sm-3"><h5>Sender</h5></th>
-                  <th class="col-sm-7"><h5>Subject</h5></th>
-                  <th class="col-sm-1"><h5>Date</h5></th>
+                  <th class="col-sm-3"><h5 class="tableHeader">Sender</h5></th>
+                  <th class="col-sm-7"><h5 class="tableHeader">Subject</h5></th>
+                  <th class="col-sm-1"><h5 class="tableHeader">Date</h5></th>
                 </tr>
               </thead>
               <tbody>
@@ -139,6 +145,7 @@
                     <tr><td colspan="4">
                     <div id="articleBody">
                       <h3>This is the Article Headline</h3>
+                      <div class="emailIcons"><i class="fa fa-reply"></i> <i class="fa fa-reply-all"></i> <i class="fa fa-share"></i> <i class="fa fa-print"></i> <i class="fa fa-trash-o"></i></div>
                       <h5>From: Jonathan Doe</h5>
                       <h5>To: You, Joe, Jen, James, Janice</h5>
                       <hr>
