@@ -12,6 +12,7 @@
  *
  *= require bootstrap
  *= require dashboard
+ *= require machmail
  *= require_tree .
  *= require_self
  */

@@ -1,9 +1,11 @@
 <div id='showup' >
+<h1 id="remove">X</h1>
 <h3><%= @title %> </h3>
+<div class="emailIcons"><i class="fa fa-reply"></i> <i class="fa fa-reply-all"></i> <i class="fa fa-share"></i> <i class="fa fa-print"></i> <i class="fa fa-trash-o"></i></div>
 <h5>From: Jonathan Doe</h5>
 <h5>To: You, Joe, Jen, James, Janice</h5>
 <hr>
 <%= "<img src='#{@image}' style='width:120px; height:150px' >".html_safe   %>
 <p><%= @text %>
 </p>
-</div>              
+</div>
