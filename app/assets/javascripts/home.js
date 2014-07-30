@@ -3,14 +3,13 @@
 //# You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-
-$(document).ready(function(){
+$(document).on('ready page:load', function(){
   
-        $.ajaxSetup({
-              headers: {
-              'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-                      }
-                      }); 
+       // $.ajaxSetup({
+       //        headers: {
+       //        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+       //                }
+       //                }); 
 
         $(".article_source_dropdown").hide();
         $("#reddit_button").click(function(){
@@ -47,17 +46,24 @@ function clickable() {
         $("#outlook_email_body").append("<img src='/images/ajax-loader.gif' id='loader' >");
         $.ajax({
                 type: 'POST',
+                beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
                 url: '/show',
                 data: {article_select: $(this)[0].id.split("_")[1]},
               });
 
         
       })
-    }}
-    };
+    }}};
+
+    
     function Mclickable() {
     var stlg = $(".articles").length;
     var myArray = [];
+    if(window.location.pathname.split("/").length < 4 || window.location.pathname.split("/")[3] == ""){
+      var provider = "huffP"
+    }else{
+      var provider = window.location.pathname.split("/")[3]
+    };
     if(stlg>0){
     for(i=0; i<stlg; i++){
       myArray.push("#art_"+i)
@@ -69,15 +75,21 @@ function clickable() {
         $("#articleBody").append("<img src='/images/ajax-loader.gif' id='loader' >");
         $.ajax({
                 type: 'POST',
+                beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
                 url: '/machshow',
-                data: {article_select: $(this)[0].id.split("_")[1]},
+                data: {article_select: $(this)[0].id.split("_")[1], prov: provider},
               });
 
         
       })
     }}
     };
-clickable();
-Mclickable();
+    if(window.location.pathname.split("/")[2] == "index"){
+    clickable();
+    }else{
+     
+    Mclickable();
+    };
+
 
  });
