@@ -1,5 +1,5 @@
 html, body {
-
+	background-color: white;
 }
 
 
@@ -10,6 +10,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h3 {
 	font-size: 16pt;
+	margin-top: 9px;
 }
 
 td {
@@ -31,7 +32,10 @@ td:hover {
 	padding: 0;
 	margin: 0 0 2px 0;
 	font-size: 11pt;
+	font-family: "Raleway", sans-serif;
 }
+
+
 
 .form-control, .btn-default {
 	-moz-border-radius: 0px;
@@ -79,6 +83,7 @@ input[type="checkbox"]:focus {
 	background-color: #e8e8e8;
 	font-weight: bold;
 	cursor: default;
+	box-shadow: none;
 }
 
 #filter {
@@ -120,8 +125,9 @@ input[type="checkbox"]:focus {
 	border-bottom: 1px solid gray;
 }
 
-.navbar {
+.navbar, .navbar-inverse, .navbar-fixed-top {
 	font-family: 'Raleway';
+	background: black;
 }
 
 #articleBody {
@@ -137,13 +143,9 @@ input[type="checkbox"]:focus {
 	/*border-bottom: 1px solid #dddddd;*/
 	margin: 8px 0;
 /*	padding: 8px 0;*/
-	display: inline-block;
-	float: left;
 }
 
 .emailIcons {
-	display: inline-block;
-	float: right;
 	padding-top: 5px;
 }
 
@@ -160,17 +162,43 @@ input[type="checkbox"]:focus {
 	clear: both;
 }
 
+.articleImageHidden{
+    display: none;
+}
+
+.articleImageShow {
+    padding-bottom: 20px;
+    padding-left: 5px;
+}
+
+.articleImageShow img {
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
+}
+
+#remove {
+	cursor: pointer;
+}
+
+#photoTrigger {
+	padding: 0;
+	margin: 15px 0;
+	display: inline-block;
+	cursor: pointer;
+}
+
 
 @media (min-width: 768px) {
   .sidebar {
-    top: 35px;
+  	padding-top: 10px;
     padding-left: 25px;
   }
 }
 
 @media (max-width: 990px) {
   .sidebar {
-    top: 35px;
+  	padding-top: 10px;
     padding-left: 25px;
   }
 	#filter {
