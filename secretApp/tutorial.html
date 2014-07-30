@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tutorial</title>
+	<link rel="stylesheet" href="styles/reset.css">
+	<link rel="stylesheet" href="styles/tutorial.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway:800,400' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".tutorial_intro_following_message").hide();
+			$("#tutorial_go_button").hide();
+			$("#tutorial_step1").hide();
+			$("#demo_1").hide();
+			$("#tutorial_intro_message_welcome").delay(200).animate({marginLeft:"+250px", opacity: "1"}, 'slow');
+			$(".tutorial_intro_following_message").delay(750).animate({height:"show", opacity:"1"}, 'slow');
+			$("#tutorial_go_button").delay(1500).animate({opacity:"show"}, 'slow');
+
+			$("#tutorial_go_button").click(function(){
+				$(this).fadeOut();
+				$("#tutorial_intro_message_welcome").fadeOut();
+				$(".tutorial_intro_following_message").fadeOut();
+
+				$("#tutorial_step1").delay(800).animate({height:"show"}, 'slow');
+				$("#demo_1").delay(1500).animate({height:'show',top:'+300px'}, 1000, 'easeOutBounce');
+			});
+
+
+		});
+	</script>
+</head>
+<body>
+	<div id="tutorial_mastercontainer">
+		<header>
+			<h1>Mach Mail</h1>
+			<nav>
+				<ul>
+					<li>About Mail</li>
+					<li>Features</li>
+					<li>Get the App</li>
+					<li>Help</li>
+				</ul>
+			</nav>
+		</header>
+		<div id="tutorial_mainbody">
+			<div id="tutorial_intro_message">
+				<h1 id="tutorial_intro_message_welcome">Welcome to Mach Mail</h1>
+				<p class="tutorial_intro_following_message">This tutorial will help get you started</p>
+				<br>
+				<p class="tutorial_intro_following_message">Follow the directions and you'll be slacking in no time!</p>
+				<br>
+				<br>
+				<p class="tutorial_intro_following_message">Are you ready?</p>
+				<br>
+				<br>
+				<h3 id="tutorial_go_button">Go!</h3>
+			</div>
+			<div>
+				<div id="tutorial_step1">
+					<h2>After signing up, you'll have the option to </h2>
+					<h2>choose which template to use ...</h2>
+				</div>
+				<img id="demo_1" src="images/demo1.png" alt="">
+				<img id="demo_2" src="" alt="">
+			</div>	
+		</div>
+		<footer align="center">
+			<h5>Terms</h5>
+			<h5>|</h5>
+			<h5>Privacy</h5>
+		</footer>
+	</div>
+</body>
+</html>

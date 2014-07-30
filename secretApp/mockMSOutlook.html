@@ -5,32 +5,85 @@
 	<title>Outlook</title>
 	<link rel="stylesheet" href="styles/reset.css">
 	<link rel="stylesheet" href="styles/outlook.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600' rel='stylesheet' type='text/css'>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   	<script>
   		$(document).ready(function(){
   			$(".article_source_dropdown").hide();
+
   			$("#reddit_button").click(function(){
   				if ($("#reddit_articles").is(':hidden')) {
   					$("#reddit_articles").animate({height:"show"});
-  					$("#arrow").css({WebkitTransform: 'rotate(' + 90 + 'deg)'})}
+  					$("#reddit_arrow").css({WebkitTransform: 'rotate(' + 90 + 'deg)'})}
   				else {
   					$("#reddit_articles").animate({height:"hide"});
-  					$("#arrow").css({WebkitTransform: 'rotate(' + 0 + 'deg)'})}
+  					$("#reddit_arrow").css({WebkitTransform: 'rotate(' + 0 + 'deg)'})}
   			});
   			
   			$("#mashable_button").click(function(){
   				if ($("#mashable_articles").is(':hidden')) {
-  					$("#mashable_articles").animate({height:"show"})}
+  					$("#mashable_articles").animate({height:"show"});
+  					$("#mashable_arrow").css({WebkitTransform: 'rotate(' + 90 + 'deg)'})}
   				else {
-  					$("#mashable_articles").animate({height:"hide"})}
+  					$("#mashable_articles").animate({height:"hide"});
+  					$("#mashable_arrow").css({WebkitTransform: 'rotate(' + 0 + 'deg)'})}
+  			});
+
+
+  			$("#bookmarks_nav_dropdown").hide();
+			if($("#bookmarks_nav_dropdown").is(':hidden')){
+				$("#bookmarks_nav_button").mouseenter(function(){
+				$("#filter_nav_dropdown").hide();	
+				$("#bookmarks_nav_dropdown").animate({height:"show"});
+				});
+			};
+			$("#bookmarks_nav_dropdown").mouseleave(function(){
+				$(this).hide()});
+
+			$("#filter_nav_dropdown").hide();
+			$("#filter_nav_button").mouseenter(function(){
+				$("#bookmarks_nav_dropdown").hide()
+				$("#filter_nav_dropdown").animate({height:"show"});
+			});
+			$("#filter_nav_dropdown").mouseleave(function(){
+				$(this).hide()});
+
+			// if($("#bookmarks_nav_dropdown").is(':visible')){
+			// 	$("#filter_nav_dropdown").hide()};
+
+			if($("#filter_nav_dropdown").is(':visible')){
+				$("#bookmarks_nav_dropdown").hide()};
+			
+			
+			
+  			$("#panic_box").mouseenter(function(){
+  				$("#outlook_maincontainer").fadeOut();
+  				// $(body).addClass("panic_box_cursor");
   			});
   		});
   	</script>
 </head>
-<body>
+<body id="panic_box_cursor">
+<div id="panic_box"></div>
 	<div id="outlook_maincontainer">
 		<div id="outlook_topbar">
 			<img src="images/outlook_topbar.png" alt="">
+			<div id="bookmarks_nav_button"></div>
+			<div id="bookmarks_nav_dropdown">
+				<ul>
+					<li>test</li>
+					<li>test2</li>
+					<li>test3</li>
+				</ul>
+			</div>
+			<div id="filter_nav_button"></div>
+			<div id="filter_nav_dropdown">
+				<ul>
+					<li>test</li>
+					<li>test5</li>
+					<li>test6</li>
+				</ul>
+			</div>
 		</div>
 		<div id="outlook_mainbody_container">
 			<div id="outlook_left_emailfolders">
@@ -39,22 +92,37 @@
 			<div id="outlook_email_inbox_list">
 				<div>
 					<div class="email_article_source" id="reddit_button">
-						<h3><img id="arrow" src="images/arrow.png" alt="">REDDIT</h3>
+						<img id="reddit_arrow" src="images/arrow.png" alt="">
+						<h3>REDDIT</h3>
 					</div>	
 					<div class="article_source_dropdown" id="reddit_articles">
 						<ul>
-							<li>test</li>
-							<li>test1</li>
+							<li>
+								<h5>Fake Reddit Article Title</h5>
+								<h6>/r/funny</h6>
+							</li>
+							<li>
+								<h5>Another Fake Reddit Article Title</h5>
+								<h6>/r/creepy</h6>
+							</li>
 						</ul>
 					</div>
 				</div>
 				<div>
 					<div class="email_article_source" id="mashable_button">
+						<img id="mashable_arrow" src="images/arrow.png" alt="">
 						<h3>MASHABLE</h3>
 					</div>	
 					<div class="article_source_dropdown" id="mashable_articles">
 						<ul>
-							<li>test3</li>
+							<li>
+								<h5>Fake Mashable Article Title</h5>
+								<h6>New</h6>
+							</li>
+							<li>
+								<h5>Another Fake Mashable Article Title</h5>
+								<h6>Trending</h6>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -62,13 +130,22 @@
 			<div id="outlook_mainbody_content">
 				<div id="outlook_email_topbar">
 					<h2>This is a test title</h2>
+					<a href=""><img src="images/star.png" alt=""></a>
 					<h3>Reddit</h3>
-					<h4>Sent: </h4>
-					<h4>To:</h4>
+					<h4>Sent: TEST TEST</h4>
+					<h4>To: TEST</h4>
+					
 				</div>
 				<div id="outlook_email_body">
 					<h1 id="reddit_article_title">Test title of reddit article</h1>
-					<p id="reddit_article_body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem aspernatur est in, impedit maiores officiis inventore beatae ut itaque dolorum velit qui consectetur. Reprehenderit nihil, nulla commodi repudiandae accusamus eius.</p>
+					<p id="reddit_article_body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem aspernatur est in, impedit maiores officiis inventore beatae ut itaque dolorum velit qui consectetur. Reprehenderit nihil, nulla commodi repudiandae accusamus eius.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem aspernatur est in, impedit maiores officiis inventore beatae ut itaque dolorum velit qui consectetur. Reprehenderit nihil, nulla commodi repudiandae accusamus eius</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum illum nobis iste officia modi fugit doloribus, similique odit ab maiores deleniti beatae assumenda a dignissimos commodi saepe et ullam obcaecati.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eligendi aliquid obcaecati, molestias harum hic eveniet perspiciatis, dicta numquam ab soluta suscipit consectetur reprehenderit facilis nisi, eius sint. Cumque, fuga!</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, expedita, dignissimos. Necessitatibus debitis, quas odit! Aliquid saepe eveniet aperiam nostrum laborum eum, quia veritatis. Id magni autem, consequatur dignissimos adipisci.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam optio doloremque excepturi recusandae tenetur illum maxime nemo sapiente inventore repudiandae rem, adipisci modi labore delectus, eaque sint esse voluptatibus. Aperiam?</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eligendi aliquid obcaecati, molestias harum hic eveniet perspiciatis, dicta numquam ab soluta suscipit consectetur reprehenderit facilis nisi, eius sint. Cumque, fuga!</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, expedita, dignissimos. Necessitatibus debitis, quas odit! Aliquid saepe eveniet aperiam nostrum laborum eum, quia veritatis. Id magni autem, consequatur dignissimos adipisci.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam optio doloremque excepturi recusandae tenetur illum maxime nemo sapiente inventore repudiandae rem, adipisci modi labore delectus, eaque sint esse voluptatibus. Aperiam?</p>
 
 				</div>
 			</div>
