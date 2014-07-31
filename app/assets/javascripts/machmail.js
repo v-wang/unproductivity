@@ -16,5 +16,10 @@ $(document).on('ready page:load', function () {
 		$(".myCheckbox").prop("checked",$("#selectAll").prop("checked"))
 	})
 
+	$("#remove2").on("click", function(){
+        $("#showup").remove();
+        $("#inbox").show();
+      });
+
 
 });

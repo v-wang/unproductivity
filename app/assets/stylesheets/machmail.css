@@ -1,20 +1,18 @@
 html, body {
-	background-color: white;
+	background: white;
+	min-width:0;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway';
+	font-weight: 700;
 	text-transform: uppercase;
 }
 
 h3 {
 	font-size: 16pt;
 	margin-top: 9px;
-}
-
-td {
-	overflow-x: hidden;
 }
 
 hr {
@@ -34,8 +32,6 @@ td:hover {
 	font-size: 11pt;
 	font-family: "Raleway", sans-serif;
 }
-
-
 
 .form-control, .btn-default {
 	-moz-border-radius: 0px;
@@ -109,9 +105,10 @@ input[type="checkbox"]:focus {
 	cursor: pointer;
 }
 
-.dropdownItem {
+.dropdownItem, .dropdownItem a {
 	list-style: none;
 	line-height: 22pt;
+	color:gray;
 }
 
 .nav-sidebar > li {
@@ -127,22 +124,18 @@ input[type="checkbox"]:focus {
 
 .navbar, .navbar-inverse, .navbar-fixed-top {
 	font-family: 'Raleway';
-	background: black;
+	background: rgba(0,0,0,.87);
+
 }
 
 #articleBody {
-	word-wrap:break;
-	white-space: normal;
-	
+	word-wrap: normal;	
 }
 
 #articleBody h3 {
 	font-size: 14pt;
-	font-weight: 600;
 	text-transform: none;
-	/*border-bottom: 1px solid #dddddd;*/
 	margin: 8px 0;
-/*	padding: 8px 0;*/
 }
 
 .emailIcons {
@@ -156,7 +149,6 @@ input[type="checkbox"]:focus {
 #articleBody h5 {
 	color: gray;
 	font-size: 11pt;
-	font-weight: 600;
 	text-transform: none;
 	margin: 0 0 6px 0;
 	clear: both;
@@ -172,14 +164,24 @@ input[type="checkbox"]:focus {
 }
 
 .articleImageShow img {
-    max-width: 100%;
     max-height: 500px;
-    height: auto;
+    width: auto;
+    max-width: 100%;
 }
 
-#remove {
+#remove, #remove2 {
 	cursor: pointer;
 }
+
+#remove2 {
+	height: 18px;
+	opacity: .7;
+}
+
+#remove2:hover {
+	opacity: 1;
+}
+
 
 #photoTrigger {
 	padding: 0;
@@ -188,6 +190,13 @@ input[type="checkbox"]:focus {
 	cursor: pointer;
 }
 
+.dropdownItem {
+	padding-left: 30px;
+}
+
+/*.sidebar {
+	background-color: #B5E4FF;
+}*/
 
 @media (min-width: 768px) {
   .sidebar {
@@ -208,6 +217,7 @@ input[type="checkbox"]:focus {
 	}
 	#nextEmails {
 		float: right;
+		margin-right: 0; 
 	}
 }
 
