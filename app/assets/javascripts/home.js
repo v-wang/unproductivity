@@ -72,7 +72,7 @@ function clickable() {
       
       $(myArray[j]).on("click", function(){
         $("#showup").remove();
-        $("#outlook_email_body").append("<img src='/images/ajax-loader.gif' id='loader' >");
+        $("#outlook_email_body").append("<div id='loader'><img src='/images/ajax-loader.gif' ><h4> Loading, please be patient </h4> </div>");
         $.ajax({
                 type: 'POST',
                 beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
@@ -115,7 +115,7 @@ function clickable() {
     };
 
 
-    if(window.location.pathname.split("/")[2] == "index"){
+    if(window.location.pathname.split("/")[2] == "machlook" || window.location.pathname.split("/")[2] == "index"){
     clickable();
     }else{
      

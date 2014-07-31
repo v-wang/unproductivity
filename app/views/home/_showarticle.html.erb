@@ -4,7 +4,7 @@
 <%= "<i id='photoTrigger' class='fa fa-picture-o fa-lg'></i>".html_safe   %>
 <%= "<img id='showupimg' src='#{@image}'>".html_safe   %>
 
-<p> <%= @text %> </p>
+<p> <%= @text.html_safe %> </p>
 
 </div>
 
