@@ -162,25 +162,6 @@ html, body {
 	margin-top: 5px;
 }
 
-#outlook_email_body {
-	width: 787px;
-	height: 514px;
-	padding:50px;
-	overflow-y: scroll;
-}
-
-#outlook_email_body h1 {
-	font-size: 20px;
-	font-weight: 600;
-	margin-bottom: 20px;
-}
-
-#outlook_email_body p {
-	font-size: 14px;
-	line-height: 20px;
-	margin-bottom: 25px;
-}
-
 #outlook_email_topbar a {
 	float: right;
 
@@ -189,6 +170,42 @@ html, body {
 #outlook_email_topbar img {
 	width: 25px;
 	height: 25px;
+	margin-right: 20px;
+}
+
+#outlook_email_body {
+	width: 787px;
+	height: 514px;
+	padding:50px;
+	
+}
+
+#showup h3 {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	line-height: 40px;
+}
+
+#showup p {
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 25px;
+	line-height: 28px;
+}
+
+#showup img {
+    max-height: 500px;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+#showup {
+	width:680;
+	height: 514px;
+	overflow-y: scroll;
+	padding:50px;
 }
 /*###### END EMAIL MAIN BODY #####
 ################################*/
@@ -241,15 +258,20 @@ html, body {
 }
 
 .article_source_dropdown li {
-	width: 340px;
-	height: 100%;
+	width: 338px;
+	height: 44px;
 	border-top:1px solid #E3E4E8;
+	margin-bottom: 5px;
+	overflow:hidden;
 }
 
 .article_source_dropdown li h5, h6{
 	margin-left: 50px;
 	font-size: 12px;
+	line-height: 20px;
 	margin-bottom: 4px;
+	width: 250px;
+	overflow:hidden;
 }
 
 .article_source_dropdown li h5 {
@@ -257,6 +279,7 @@ html, body {
 	font-weight: 600;
 	letter-spacing: 0.5px;
 	word-spacing: 1px;
+
 }
 
 .article_source_dropdown li h6 {
@@ -273,6 +296,7 @@ html, body {
 .article_source_dropdown li:hover h6{
 	color: white;
 	cursor: default;
+
 }
 
 /*###### END EMAIL DROP DOWN #####

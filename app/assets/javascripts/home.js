@@ -31,7 +31,8 @@ $(document).on('ready page:load', function(){
       // $("#remove").on("click", function(){
       //   $("#showup").remove();
       //   $("#inbox").show();
-     $(".dropdownTitle").is(":hidden");
+
+  $(".dropdownTitle").is(":hidden");
   
   // This slides the sidebar menus up and down
   $(".dropdownTitle").click(function(){
