@@ -1,6 +1,43 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<head>
+  <meta charset="UTF-8">
+  <title>Project U</title>
+  
+  <link href="/assets/login.css" media="screen" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:800,400' rel='stylesheet' type='text/css'>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  
+</head>
+<body>
+  <div id="login_maincontainer">
+    <header>
+      <h1>Mach Mail</h1>
+      <nav>
+        <ul>
+          <li>About Mail</li>
+          <li>Features</li>
+          <li>Get the App</li>
+          <li>Help</li>
+        </ul>
+      </nav>
+      <% if notice %><p class="notice" ><%= notice %></p><% end %>
+    <% if alert %><p class="alert"><%= alert %></p><% end %>
+    </header>
+    <div id="login_contentholder">
+      <div id="login_adspace">
+        <h2>Slackr.</h2>
+        <h4>READ WHAT YOU WANT TO READ</h4>
+        <div id="login_sub_ad_box" align="center">
+          <h5>- FIND -</h5>
+          <h5>- READ -</h5>
+          <h5>- SLACK -</h5>
+        </div>
+        <div id="login_ad_button" align="center">Sign up now</div>
+      </div>
+     
+      <div id="signup_form" align="center">
+        <h1>Mach Mail</h1>
+        <h3>Get started with your new Mach speed mail!</h3>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div>
@@ -18,7 +55,17 @@
     <div>
     <%= f.text_field :lname, autocomplete: "off", placeholder:"last name", id:"signup_lname" %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Sign up" ,id:"login_submit_box"%></div>
 <% end %>
 
+      </div>
+    </div>
+    <footer align="center">
+      <h5>Terms</h5>
+      <h5>|</h5>
+      <h5>Privacy</h5>
+    </footer>
+  </div>
+</body>
+</html>
 
