@@ -12,26 +12,26 @@ $(document).ready(function(){
                       }
                       }); 
 
-        $(".article_source_dropdown").hide();
-        $("#reddit_button").click(function(){
-          if ($("#reddit_articles").is(':hidden')) {
-            $("#reddit_articles").animate({height:"show"});
-            $("#arrow").css({WebkitTransform: 'rotate(' + 90 + 'deg)'})}
-          else {
-            $("#reddit_articles").animate({height:"hide"});
-            $("#arrow").css({WebkitTransform: 'rotate(' + 0 + 'deg)'})}
-        });
+      //   $(".article_source_dropdown").hide();
+      //   $("#reddit_button").click(function(){
+      //     if ($("#reddit_articles").is(':hidden')) {
+      //       $("#reddit_articles").animate({height:"show"});
+      //       $("#arrow").css({WebkitTransform: 'rotate(' + 90 + 'deg)'})}
+      //     else {
+      //       $("#reddit_articles").animate({height:"hide"});
+      //       $("#arrow").css({WebkitTransform: 'rotate(' + 0 + 'deg)'})}
+      //   });
         
-        $("#mashable_button").click(function(){
-          if ($("#mashable_articles").is(':hidden')) {
-            $("#mashable_articles").animate({height:"show"})}
-          else {
-            $("#mashable_articles").animate({height:"hide"})}
-        });
+      //   $("#mashable_button").click(function(){
+      //     if ($("#mashable_articles").is(':hidden')) {
+      //       $("#mashable_articles").animate({height:"show"})}
+      //     else {
+      //       $("#mashable_articles").animate({height:"hide"})}
+      //   });
      
-      $("#remove").on("click", function(){
-        $("#showup").remove();
-        $("#inbox").show();
+      // $("#remove").on("click", function(){
+      //   $("#showup").remove();
+      //   $("#inbox").show();
       });
 function clickable() {
     var stlg = $(".articles").length;
@@ -79,5 +79,20 @@ function clickable() {
     };
 clickable();
 Mclickable();
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  });
