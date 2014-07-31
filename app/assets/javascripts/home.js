@@ -57,7 +57,7 @@ function clickable() {
 
     
     function Mclickable() {
-    var stlg = $(".articles").length;
+    var stlg = parseInt($(".articles:last")[0].id.split("_")[1]) + 1;
     var myArray = [];
     if(window.location.pathname.split("/").length < 4 || window.location.pathname.split("/")[3] == ""){
       var provider = "huffP"
@@ -72,7 +72,7 @@ function clickable() {
       
       $(myArray[j]).on("click", function(){
         $("#inbox").hide(); 
-        $("#articleBody").append("<img src='/images/ajax-loader.gif' id='loader' >");
+        $("#articleBody").append("<div id='loader'><img src='/images/ajax-loader.gif' ><h4> Loading, please be patient </h4> </div>");
         $.ajax({
                 type: 'POST',
                 beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},

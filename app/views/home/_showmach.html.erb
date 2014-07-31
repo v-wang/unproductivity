@@ -9,8 +9,7 @@
 <hr>
 <%= "<i id='photoTrigger' class='fa fa-picture-o fa-lg'></i>".html_safe   %>
 <%= "<div class='articleImageShow'><img  src='#{@image}'></div>".html_safe   %>
-<p><%= @text %>
-</p>
+<%= @text.html_safe %>
 </div>
 
 <script> 
@@ -23,5 +22,6 @@ $("#remove").on("click", function(){
         $("#showup").remove();
         $("#inbox").show();
       });
+$("figure").remove();
 
 </script>

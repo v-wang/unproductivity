@@ -106,9 +106,21 @@ class HomeController < ApplicationController
     # if pro != "mash"
     body_json = open("http://api.diffbot.com/v3/article?token=8de6c6c3e5fcec13f7b786b833bb35f7&url=#{url}")
     @body = JSON.parse(body_json.read)
-    @text = @body["objects"][0]["text"]
+    if @body["objects"][0]["html"]
+    @text = @body["objects"][0]["html"]
+	else
+		@text = "Article not available"
+	end
+	if @body["objects"][0]["title"]
     @title = @body["objects"][0]["title"]
+	else
+	@title = "Article not available"
+	end
+	if @body["objects"][0]["images"][0]["url"]
     @image = @body["objects"][0]["images"][0]["url"]
+	else
+		@image = "http://placekitten.com/g/400/600"
+	end
     #else
     # mash = open("http://mashable.com/stories.json")
     # mmash = JSON.parse(mash.read)
