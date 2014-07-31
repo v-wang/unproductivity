@@ -1,6 +1,7 @@
 require 'open-uri'
 require 'JSON'
 class HomeController < ApplicationController
+	before_action :authenticate_user!
   def index
      huffpost = Nokogiri::HTML(open('http://www.huffingtonpost.com'))
      @articles = []
@@ -148,10 +149,10 @@ class HomeController < ApplicationController
 		else
 		@title = "Article not available"
 		end
-		if @body["objects"][0]["images"][0]["url"]
+		if @body["objects"][0]["images"]
 	    @image = @body["objects"][0]["images"][0]["url"]
 		else
-			@image = "http://placekitten.com/g/400/600"
+			@image = "http://placekitten.com/g/300/400"
 		end
     
 
