@@ -136,6 +136,10 @@ input[type="checkbox"]:focus {
   word-wrap: normal;  
 }
 
+#showup {
+ 
+}
+
 #articleBody h3 {
   font-size: 14pt;
   text-transform: none;
