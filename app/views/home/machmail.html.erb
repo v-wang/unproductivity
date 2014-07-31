@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+ <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +23,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
   </head>
 
   <body>
@@ -34,17 +37,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">MachMail</a>
+          <a class="navbar-brand" ><img id="remove2" src="/images/logo-white.png" alt="MachMail"></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">user.name@machmail.com <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Edit Profile</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Sign Out</a></li>
-              </ul>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Edit Profile</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Sign Out</a></li>
+                </ul>
             </li>
           </ul>
         </div>
@@ -64,9 +67,11 @@
               <ul >
                <li class="dropdownItem"><a href="/home/mach/huffP">Huffington Post</a></li>
                 <li class="dropdownItem"><a href="/home/mach/mash">Mashable</a></li>
+                <li class="dropdownItem"><a href="/home/mach/bloomberg">Bloomberg</a></li>
                 <li class="dropdownItem"><a href="/home/mach/wired">Wired</a></li>
                 <li class="dropdownItem"><a href="/home/mach/nyt">New York Times</a></li>
-                <li class="dropdownItem">Saved</li>
+                <li class="dropdownItem"><a href="/home/mach/npr">NPR</a></li>
+                <li class="dropdownItem"><a href="#">Saved</a></li>
               </ul>
             <li>Trash</li>
             <li>Spam</li>
@@ -83,9 +88,9 @@
           </ul>
           <hr>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         
-        <div id="mailboxTools">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> 
+          <div id="mailboxTools">
             <div class="buttonWrapper">
               <div class="btn btn-default" type="button" value="Refresh" id="refresh"><i class="fa fa-refresh fa-lg"></i></div>
               <div class="btn btn-default" type="button" value="Compose"><i class="fa fa-pencil fa-lg"></i></div>
@@ -107,17 +112,16 @@
                 <thead>
                   <tr>
                     <th class="col-sm-1"><input type="checkbox" class="myCheckbox" id="selectAll"></th>
-                    <th class="col-sm-3"><h5 class="tableHeader">Sender</h5></th>
-                    <th class="col-sm-7"><h5 class="tableHeader">Subject</h5></th>
-                    <th class="col-sm-1"><h5 class="tableHeader">Date</h5></th>
+                    <th class="col-sm-3"><span class="tableHeader">Sender</span></th>
+                    <th class="col-sm-7"><span class="tableHeader">Subject</span></th>
+                    <th class="col-sm-1"><span class="tableHeader">Date</span></th>
                   </tr>
                 </thead>
                 <tbody>
 
-
                     <% i = 0 %>
                     <% @articles.each do |art| %>
-                    <% if art != "" && art[0..3] != "More" %>
+                    <% if art != "" && art[0..3] != "More" && art.length > 19 %>
                     <%= "<tr><td><input type='checkbox' class='myCheckbox'></td>".html_safe %>
                     <%= "<td>#{['Abraham Lincoln','Gerald Ford','George Washington','John Adams','Bill Clinton','George Bush','Jimmy Carter','Barack Obama','Ronald Regan'][rand(9)]}</td>".html_safe %>
                     <%= "<td id='art_#{i}' class='articles'> #{art} </td>".html_safe %>
@@ -127,12 +131,10 @@
                     <% i += 1 %>
                     <% end %>
                     
-                  
                 </tbody>
               </table>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -147,4 +149,6 @@
     <script src="/assets/docs.min.js"></script>
     <!--<script src="/assets/machmail.js"></script>-->
   </body>
+
 </html>
+

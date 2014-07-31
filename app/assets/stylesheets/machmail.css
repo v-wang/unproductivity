@@ -1,19 +1,18 @@
 html, body {
-
+	background: white;
+	min-width:0;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway';
+	font-weight: 700;
 	text-transform: uppercase;
 }
 
 h3 {
 	font-size: 16pt;
-}
-
-td {
-	overflow-x: hidden;
+	margin-top: 9px;
 }
 
 hr {
@@ -31,6 +30,7 @@ td:hover {
 	padding: 0;
 	margin: 0 0 2px 0;
 	font-size: 11pt;
+	font-family: "Raleway", sans-serif;
 }
 
 .form-control, .btn-default {
@@ -79,6 +79,7 @@ input[type="checkbox"]:focus {
 	background-color: #e8e8e8;
 	font-weight: bold;
 	cursor: default;
+	box-shadow: none;
 }
 
 #filter {
@@ -104,9 +105,15 @@ input[type="checkbox"]:focus {
 	cursor: pointer;
 }
 
-.dropdownItem {
+.dropdownItem, .dropdownItem a {
 	list-style: none;
 	line-height: 22pt;
+	color: gray;
+}
+
+.dropdownItemActive {
+	font-weight: bold;
+	font-style: italic;
 }
 
 .nav-sidebar > li {
@@ -120,30 +127,22 @@ input[type="checkbox"]:focus {
 	border-bottom: 1px solid gray;
 }
 
-.navbar {
+.navbar, .navbar-inverse, .navbar-fixed-top {
 	font-family: 'Raleway';
+	background: rgba(0,0,0,.86);
 }
 
 #articleBody {
-	word-wrap:break;
-	white-space: normal;
-	
+	word-wrap: normal;	
 }
 
 #articleBody h3 {
 	font-size: 14pt;
-	font-weight: 600;
 	text-transform: none;
-	/*border-bottom: 1px solid #dddddd;*/
 	margin: 8px 0;
-/*	padding: 8px 0;*/
-	display: inline-block;
-	float: left;
 }
 
 .emailIcons {
-	display: inline-block;
-	float: right;
 	padding-top: 5px;
 }
 
@@ -154,23 +153,65 @@ input[type="checkbox"]:focus {
 #articleBody h5 {
 	color: gray;
 	font-size: 11pt;
-	font-weight: 600;
 	text-transform: none;
 	margin: 0 0 6px 0;
 	clear: both;
 }
 
+.articleImageHidden{
+    display: none;
+}
+
+.articleImageShow {
+    padding-bottom: 20px;
+    padding-left: 5px;
+}
+
+.articleImageShow img {
+    max-height: 500px;
+    width: auto;
+    max-width: 100%;
+}
+
+#remove, #remove2 {
+	cursor: pointer;
+}
+
+#remove2 {
+	height: 18px;
+	opacity: .7;
+}
+
+#remove2:hover {
+	opacity: 1;
+}
+
+
+#photoTrigger {
+	padding: 0;
+	margin: 15px 0;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.dropdownItem {
+	padding-left: 30px;
+}
+
+/*.sidebar {
+	background-color: #B5E4FF;
+}*/
 
 @media (min-width: 768px) {
   .sidebar {
-    top: 35px;
+  	padding-top: 10px;
     padding-left: 25px;
   }
 }
 
 @media (max-width: 990px) {
   .sidebar {
-    top: 35px;
+  	padding-top: 10px;
     padding-left: 25px;
   }
 	#filter {
@@ -180,6 +221,7 @@ input[type="checkbox"]:focus {
 	}
 	#nextEmails {
 		float: right;
+		margin-right: 0; 
 	}
 }
 

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'users/update'
 
   devise_for :users
-  root 'users#index'
+  root 'home#machmail'
 
   
 
