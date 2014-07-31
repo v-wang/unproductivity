@@ -108,7 +108,12 @@ input[type="checkbox"]:focus {
 .dropdownItem, .dropdownItem a {
 	list-style: none;
 	line-height: 22pt;
-	color:gray;
+	color: gray;
+}
+
+.dropdownItemActive {
+	font-weight: bold;
+	font-style: italic;
 }
 
 .nav-sidebar > li {
@@ -124,8 +129,7 @@ input[type="checkbox"]:focus {
 
 .navbar, .navbar-inverse, .navbar-fixed-top {
 	font-family: 'Raleway';
-	background: rgba(0,0,0,.87);
-
+	background: rgba(0,0,0,.86);
 }
 
 #articleBody {
