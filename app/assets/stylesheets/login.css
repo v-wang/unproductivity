@@ -1,7 +1,8 @@
 html, body {
 	padding: 0;
 	margin: 0;
-	min-width: 1300px;
+	/* this screwed up the webmail reading pane*/
+	/*min-width: 1300px;*/
 	font-family: 'Raleway', sans-serif;
 }
 
