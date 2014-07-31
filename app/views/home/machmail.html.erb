@@ -76,6 +76,7 @@
                 <li class="dropdownItem"><a href="/home/mach/wired">Wired</a></li>
                 <li class="dropdownItem"><a href="/home/mach/nyt">New York Times</a></li>
                 <li class="dropdownItem"><a href="/home/mach/npr">NPR</a></li> -->
+
               </ul>
             <li>Trash</li>
             <li>Spam</li>
@@ -127,7 +128,7 @@
                     <% @articles.each do |art| %>
                     <% if art != "" && art[0..3] != "More" && art.length > 19 %>
                     <%= "<tr><td><input type='checkbox' class='myCheckbox'></td>".html_safe %>
-                    <%= "<td>#{['Abraham Lincoln','Gerald Ford','George Washington','John Adams','Bill Clinton','George Bush','Jimmy Carter','Barack Obama','Ronald Regan'][rand(9)]}</td>".html_safe %>
+                    <%= "<td>#{['Abraham Lincoln','Gerald Ford','George Washington','John Adams','Bill Clinton','George Bush','Jimmy Carter','Barack Obama','Ronald Regan', 'Lyndon Johnson', 'Jack Kennedy'][rand(11)]}</td>".html_safe %>
                     <%= "<td id='art_#{i}' class='articles'> #{art} </td>".html_safe %>
                     <%= "<td>#{Time.now.asctime[4..9]}</td> </tr>".html_safe %>
                      
