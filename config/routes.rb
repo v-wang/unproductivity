@@ -16,6 +16,10 @@ Rails.application.routes.draw do
 
   get 'users/update'
 
+
+ get 'home/machlook/:provider' => 'home#index'
+ post '/machlookshow' => 'home#show'
+
   devise_for :users
   root 'home#machmail'
 
