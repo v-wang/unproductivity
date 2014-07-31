@@ -4,6 +4,7 @@
 	<title>Outlook</title>
 	
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<script>
   		$(document).ready(function(){
   			$(".article_source_dropdown").hide();
@@ -66,7 +67,7 @@
 	<div id="outlook_maincontainer">
 		<div id="outlook_topbar">
 			<img src="/images/outlook_topbar.png" alt="">
-			<div id="bookmarks_nav_button"></div>
+			<!-- <div id="bookmarks_nav_button"></div>
 			<div id="bookmarks_nav_dropdown">
 				<ul>
 					<li>test</li>
@@ -81,7 +82,7 @@
 					<li>test5</li>
 					<li>test6</li>
 				</ul>
-			</div>
+			</div> -->
 		</div>
 		<div id="outlook_mainbody_container">
 			<div id="outlook_left_emailfolders">
@@ -90,14 +91,14 @@
 			<div id="outlook_email_inbox_list">
 				<div>
 					<div class="email_article_source" id="reddit_button">
-						<h3><img id="arrow" src="/images/arrow.png" alt="">Huff Post</h3>
+						<img id="arrow" src="/images/arrow.png" alt=""><h3>Huff Post</h3>
 					</div>	
 					<div class="article_source_dropdown" id="reddit_articles">
 						<ul>
 						    <% i = 0 %>
 							<% @articles.each do |art| %>
 							<% if art != "" && art[0..3] != "More" %>
-							<%= "<li id='art_#{i}' class='articles'> #{art} </li>".html_safe %>
+							<%= "<li id='art_#{i}' class='articles'> <h5> #{art} </h5> </li>".html_safe %>
 							<% end %>
 							<% i += 1 %>
 							<% end %>
@@ -133,15 +134,8 @@
 					
 				</div>
 				<div id="outlook_email_body">
-					<h1 id="reddit_article_title">Test title of reddit article</h1>
-					<p id="reddit_article_body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem aspernatur est in, impedit maiores officiis inventore beatae ut itaque dolorum velit qui consectetur. Reprehenderit nihil, nulla commodi repudiandae accusamus eius.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem aspernatur est in, impedit maiores officiis inventore beatae ut itaque dolorum velit qui consectetur. Reprehenderit nihil, nulla commodi repudiandae accusamus eius</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum illum nobis iste officia modi fugit doloribus, similique odit ab maiores deleniti beatae assumenda a dignissimos commodi saepe et ullam obcaecati.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eligendi aliquid obcaecati, molestias harum hic eveniet perspiciatis, dicta numquam ab soluta suscipit consectetur reprehenderit facilis nisi, eius sint. Cumque, fuga!</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, expedita, dignissimos. Necessitatibus debitis, quas odit! Aliquid saepe eveniet aperiam nostrum laborum eum, quia veritatis. Id magni autem, consequatur dignissimos adipisci.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam optio doloremque excepturi recusandae tenetur illum maxime nemo sapiente inventore repudiandae rem, adipisci modi labore delectus, eaque sint esse voluptatibus. Aperiam?</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eligendi aliquid obcaecati, molestias harum hic eveniet perspiciatis, dicta numquam ab soluta suscipit consectetur reprehenderit facilis nisi, eius sint. Cumque, fuga!</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, expedita, dignissimos. Necessitatibus debitis, quas odit! Aliquid saepe eveniet aperiam nostrum laborum eum, quia veritatis. Id magni autem, consequatur dignissimos adipisci.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam optio doloremque excepturi recusandae tenetur illum maxime nemo sapiente inventore repudiandae rem, adipisci modi labore delectus, eaque sint esse voluptatibus. Aperiam?</p>
+					
+					
 
 				</div>
 			</div>

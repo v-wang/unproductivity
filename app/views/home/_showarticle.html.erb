@@ -1,9 +1,23 @@
 <div id="showup" >
 
 <h3><%= @title %> </h3>
-<%= "<img src='#{@image}' style='width:120px; height:150px' >".html_safe   %>
+<%= "<i id='photoTrigger' class='fa fa-picture-o fa-lg'></i>".html_safe   %>
+<%= "<img id='showupimg' src='#{@image}'>".html_safe   %>
 
 <p> <%= @text %> </p>
 
 </div>
 
+<script> 
+$("#showupimg").hide()
+$("#photoTrigger").click( function(){
+	$("#showupimg").slideToggle();
+});
+
+$("#remove").on("click", function(){
+        $("#showup").remove();
+        $("#inbox").show();
+      });
+$("figure").remove();
+
+</script>

@@ -31,7 +31,7 @@ $(document).on('ready page:load', function(){
       // $("#remove").on("click", function(){
       //   $("#showup").remove();
       //   $("#inbox").show();
-      });
+    
 function clickable() {
     var stlg = $(".articles").length;
     var myArray = [];
@@ -85,8 +85,7 @@ function clickable() {
     }}
     };
 
-clickable();
-Mclickable();
+
     
 
 
