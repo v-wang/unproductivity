@@ -1,5 +1,6 @@
 html, body {
 	background: white;
+	min-width:0;
 }
 
 
@@ -31,8 +32,6 @@ td:hover {
 	font-size: 11pt;
 	font-family: "Raleway", sans-serif;
 }
-
-
 
 .form-control, .btn-default {
 	-moz-border-radius: 0px;
