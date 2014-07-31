@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   post '/show' => 'home#show'
 
+  get '/sign_out' => "users#destroy"
+
   post '/machshow' => 'home#machshow'
 
   get 'users/index'

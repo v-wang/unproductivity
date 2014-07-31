@@ -142,6 +142,12 @@ class HomeController < ApplicationController
 end
 
   def machmail
+    if user_signed_in?
+  	@user = current_user
+    else
+    @user = nil
+    redirect_to '/users/sign_in'
+    end
   	cnn="http://www.cnn.com"
 	huffP = "http://www.huffingtonpost.com"
 	nyt = "http://www.nytimes.com"
@@ -230,7 +236,9 @@ end
     if pro != "bloomberg" && pro != "npr" && pro != "mash"
    	 url = news_provider.css(handle)[selected][:href]
 	elsif pro == "npr"
+		if news_provider.css(handle)[selected].css("a")
 		url = news_provider.css(handle)[selected].css("a")[1][:href]
+	    end
 	elsif pro == "mash"
 		if selected < 10
     		mash_selected = selected
@@ -249,7 +257,7 @@ end
     else
    		url = bloomberg + news_provider.css(handle)[selected][:href]
     end	
-    
+    if url
 	    body_json = open("http://api.diffbot.com/v3/article?token=8de6c6c3e5fcec13f7b786b833bb35f7&url=#{url}")
 	    @body = JSON.parse(body_json.read)
 	    if @body["objects"][0]["html"]
@@ -267,7 +275,11 @@ end
 		else
 			@image = "http://placekitten.com/g/300/400"
 		end
-    
+    else
+    	@text = "Article not available"
+    	@title = "Article not available"
+    	@image = "http://placekitten.com/g/300/400"
+    end
 
     puts "**************#{pro} & #{handle}***********"
 
