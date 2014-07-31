@@ -10,9 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap
- *= require dashboard
- *= require machmail
+
+
  *= require_tree .
  *= require_self
  */
@@ -24,4 +23,21 @@
        url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
        url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+
+.notice {
+	color:red;
+	/*border:1px solid black;*/
+	width:222px;
+	margin: auto;
+}
+
+.alert {
+	color:red;
+	/*border:1px solid rgba(0,0,0,0.4);*/
+	width:387px;
+	margin: auto;
+	text-align: center;
+	
 }

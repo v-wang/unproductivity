@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Project U</title>
-	<link href="/assets/reset.css" media="screen" rel="stylesheet">
+	
 	<link href="/assets/login.css" media="screen" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Raleway:800,400' rel='stylesheet' type='text/css'>
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -28,6 +28,8 @@
 					<li>Help</li>
 				</ul>
 			</nav>
+			<% if notice %><p class="notice" ><%= notice %></p><% end %>
+		<% if alert %><p class="alert"><%= alert %></p><% end %>
 		</header>
 		<div id="login_contentholder">
 			<div id="login_adspace">
@@ -59,7 +61,7 @@
 				<% end %>
 
 				
-				<br>
+				
 				<br>
 				<h6> - OR - </h6>
 				<div id="login_createaccount">
@@ -88,7 +90,7 @@
     <div>
     <%= f.text_field :lname, autocomplete: "off", placeholder:"last name", id:"signup_lname" %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Sign up" ,id:"login_submit_box"%></div>
 <% end %>
 
 			</div>
