@@ -7,11 +7,11 @@
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<script>
   		$(document).ready(function(){
-  			$(".article_source_dropdown").hide();
+  			// $(".article_source_dropdown").hide();
 
   			$("#reddit_button").click(function(){
   				if ($("#reddit_articles").is(':hidden')) {
-  					$("#reddit_articles").animate({height:"show"});
+  					$("#reddit_articles").animate({height:"show"},'slow');
   					$("#reddit_arrow").css({WebkitTransform: 'rotate(' + 90 + 'deg)'})}
   				else {
   					$("#reddit_articles").animate({height:"hide"});
@@ -90,8 +90,63 @@
 			</div>
 			<div id="outlook_email_inbox_list">
 				<div>
+					<div class="email_article_source" id="mashable_button">
+						<img id="mashable_arrow" src="/images/arrow.png" alt="">
+						<a href="/home/machlook/wired"><h3>Wired</h3></a>
+					</div>	
+					<div class="article_source_dropdown" id="mashable_articles">
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
+				<div>
+					<div class="email_article_source" id="mashable_button">
+						<img id="mashable_arrow" src="/images/arrow.png" alt="">
+						<a href="/home/machlook/nyt"><h3>New York Times</h3></a>
+					</div>	
+					<div class="article_source_dropdown" id="mashable_articles">
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
+				<div>
+					<div class="email_article_source" id="mashable_button">
+						<img id="mashable_arrow" src="/images/arrow.png" alt="">
+						<a href="/home/machlook/bloomberg"><h3>Bloomberg</h3></a>
+					</div>	
+					<div class="article_source_dropdown" id="mashable_articles">
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
+				<div>
+					<div class="email_article_source" id="mashable_button">
+						<img id="mashable_arrow" src="/images/arrow.png" alt="">
+						<a href="/home/machlook/npr"><h3>NPR</h3></a>
+					</div>	
+					<div class="article_source_dropdown" id="mashable_articles">
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
+				<div>
+					<div class="email_article_source" id="mashable_button">
+						<img id="mashable_arrow" src="/images/arrow.png" alt="">
+						<a href="/home/machlook/huffP"><h3>Huffington Post</h3></a>
+					</div>	
+					<div class="article_source_dropdown" id="mashable_articles">
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
+				<div>
 					<div class="email_article_source" id="reddit_button">
-						<img id="arrow" src="/images/arrow.png" alt=""><h3>Huff Post</h3>
+						<img id="reddit_arrow" src="/images/arrow.png" alt=""><h3>Main Inbox</h3>
 					</div>	
 					<div class="article_source_dropdown" id="reddit_articles">
 						<ul>
@@ -105,24 +160,7 @@
 						</ul>
 					</div>
 				</div>
-				<div>
-					<div class="email_article_source" id="mashable_button">
-						<img id="mashable_arrow" src="/images/arrow.png" alt="">
-						<h3>MASHABLE</h3>
-					</div>	
-					<div class="article_source_dropdown" id="mashable_articles">
-						<ul>
-							<li>
-								<h5>Fake Mashable Article Title</h5>
-								<h6>New</h6>
-							</li>
-							<li>
-								<h5>Another Fake Mashable Article Title</h5>
-								<h6>Trending</h6>
-							</li>
-						</ul>
-					</div>
-				</div>
+				
 			</div>
 			<div id="outlook_mainbody_content">
 				<div id="outlook_email_topbar">

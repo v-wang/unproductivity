@@ -222,6 +222,7 @@ html, body {
 	float: left;
 	height: 714px;
 	overflow: scroll;
+	overflow-x:hidden;
 	/*display: none;*/
 }
 
@@ -246,6 +247,8 @@ html, body {
 	display: inline-block;
 	position: relative;
 	bottom:2px;
+	margin-left: 5px;
+	width:120px;
 }
 
 .email_article_source img {
