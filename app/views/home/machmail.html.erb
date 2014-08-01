@@ -45,7 +45,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= @user.email.split("@")[0] %>@machmail.com <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="/home/index">Switch Template </a></li>
-                  <li><a href="#">Edit Profile</a></li>
+                  <li><a href="/users/edit">Edit Profile</a></li>
                   <li class="divider"></li>
                   <li><%= link_to "Log Out", destroy_user_session_path, method: "delete" %></li>
                 </ul>
@@ -68,27 +68,27 @@
               <ul>
                 <% @user.content_providers.each do | source | %>
                 <!-- EACH WITH INDEX?? -->
-                      <% if source.name == "Wired" %>
+                      <% if source.name == "wired" %>
                         <% abbrev = "wired" %>
-                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
-                      <% elsif source.name == "New York Times" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>Wired</a></li>".html_safe %>
+                      <% elsif source.name == "nyt" %>
                         <% abbrev = "nyt" %>
-                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
-                      <% elsif source.name == "NPR" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>New York Times</a></li>".html_safe %>
+                      <% elsif source.name == "npr" %>
                         <% abbrev = "NPR" %>
-                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
-                      <% elsif source.name == "Bloomberg" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>NPR</a></li>".html_safe %>
+                      <% elsif source.name == "bloomberg" %>
                         <% abbrev = "bloomberg" %>
-                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
-                      <% elsif source.name == "Mashable" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>Bloomberg</a></li>".html_safe %>
+                      <% elsif source.name == "mash" %>
                         <% abbrev = "mash" %>
-                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
-                      <% elsif source.name == "Huffington Post" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>Mashable</a></li>".html_safe %>
+                      <% elsif source.name == "huffP" %>
                         <% abbrev = "huffP" %>
-                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
-                        <% elsif source.name == "J Crew" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>Huffington Post</a></li>".html_safe %>
+                        <% elsif source.name == "jcrew" %>
                         <% abbrev = "jcrew" %>
-                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>J Crew Women</a></li>".html_safe %>
                       <% end %>
                 <% end %>
                <!-- <li class="dropdownItem"><a href="/home/mach/huffP">Huffington Post</a></li>
@@ -149,7 +149,7 @@
                     <% @articles.each do |art| %>
                     <% if art != "" && art[0..3] != "More" && art.length > 19 %>
                     <%= "<tr><td><input type='checkbox' class='myCheckbox'></td>".html_safe %>
-                    <%= "<td>#{['Abraham Lincoln','Gerald Ford','George Washington','John Adams','Bill Clinton','George Bush','Jimmy Carter','Barack Obama','Ronald Regan', 'Lyndon Johnson', 'Jack Kennedy'][rand(11)]}</td>".html_safe %>
+                    <%= "<td>#{['Abraham Lincoln','Gerald Ford','George Washington','John Adams','Bill Clinton','George Bush','Jimmy Carter','Barack Obama','Ronald Regan', 'Lyndon Johnson', 'Jack Kennedy','Mark Twain'][rand(12)]}</td>".html_safe %>
                     <%= "<td id='art_#{i}' class='articles'> #{art} </td>".html_safe %>
                     <%= "<td>#{Time.now.asctime[4..9]}</td> </tr>".html_safe %>
                      
