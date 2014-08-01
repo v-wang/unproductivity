@@ -2,6 +2,7 @@ Welcome to MachMail!
 
 
 To make sure everything is functional:
+
 1. open terminal
 
 2. rake db:migrate
