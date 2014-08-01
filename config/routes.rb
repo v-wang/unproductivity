@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'home/index' => 'home#index'
+  get 'machlook' => 'home#index'
 
-  get 'home/mach' => 'home#machmail'
+  get 'machmail' => 'home#machmail'
 
   get 'home/mach/:provider' => 'home#machmail'
 
@@ -23,12 +23,15 @@ Rails.application.routes.draw do
  get 'home/machlook/:provider' => 'home#index'
 
 
-  devise_for :users
+  devise_for :users, :except => [:sign_in]
+
+
+
+
   root 'home#machmail'
 
-  get 'users/homepage' => 'users#homepage'
+  get 'homepage' => 'users#homepage'
 
-  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -79,12 +79,12 @@ footer h5 {
 
 #tutorial_intro_message h3 {
 	font-size: 30px;
-	width: 50px;
-	height: 40px;
+	width: 95px;
+	height: 70px;
 	color: white;
 	letter-spacing: 1px;
 	margin-left: 600px;
-	padding: 30px;
+	padding: 20px;
 	border:2px solid white;
 	border-radius: 20px;
 	opacity: 1;
@@ -151,8 +151,8 @@ footer h5 {
 #redbox_1 {
 	position: absolute;
 	z-index: 10;
-	width:235px;
-	height: 50px;
+	width:240px;
+	height: 53px;
 	border:2px solid red;
 	top:195px;
 }
@@ -178,8 +178,8 @@ footer h5 {
 }
 
 #greenbox_1 {
-	width:613px;
-	height: 457px;
+	width:617px;
+	height: 461px;
 	border:2px solid green;
 	position: absolute;
 	z-index:9;
@@ -200,7 +200,7 @@ footer h5 {
 	z-index: 20;
 	width:30px;
 	height: 30px;
-	margin-left: 1191px;
+	margin-left: 1195px;
 	top:188px;
 	background-color: rgba(255,255,255,0.5);
 }
@@ -244,8 +244,8 @@ footer h5 {
 	z-index: 10;
 	width:70px;
 	height: 70px;
-	margin-left: 1151px;
-	top:632px;
+	margin-left: 1155px;
+	top:636px;
 	background-color: rgba(255,255,255,0.5);
 }
 
@@ -290,8 +290,8 @@ footer h5 {
 }
 
 #tutorial_last_message {
-	width:427px;
-	height: 40px;
+	width:611px;
+	height: 150px;
 	padding:50px;
 	border:2px solid white;
 	border-style:groove;
