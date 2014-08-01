@@ -7,12 +7,13 @@ To make sure everything is functional:
 
 2. rake db:migrate
 
-3. Open application directory
+3. open application directory
 
 4. open rails console
 
 5. require './content_providers.rb'
 
+6. run the app
 
 MachMail is a fake email client designed to emulate functional email clients.
 
