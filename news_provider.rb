@@ -1,0 +1,7 @@
+ContentProvider.create("name"=>"huffP")
+ContentProvider.create("name"=>"mash")
+ContentProvider.create("name"=>"bloomberg")
+ContentProvider.create("name"=>"wired")
+ContentProvider.create("name"=>"nyt")
+ContentProvider.create("name"=>"npr")
+ContentProvider.create("name"=>"jcrew")

@@ -1,5 +1,5 @@
 <div id='showup1' >
-<h4 id="remove">x</h4>
+<h4 class="remove">x</h4>
 <hr>
 <h3><%= @title %> </h3>
 <h5>From: Jonathan Doe</h5>
@@ -11,6 +11,7 @@
 <%= "<div class='articleImageShow'><img  src='#{@image}'></div>".html_safe   %>
 <%= "<h3> #{@price} </h3>".html_safe %>
 <%= @text.html_safe %>
+<h4 class="remove">x</h4>
 </div>
 
 <script> 
@@ -19,7 +20,7 @@ $("#photoTrigger").click( function(){
 	$(".articleImageShow").slideToggle();
 });
 
-$("#remove").on("click", function(){
+$(".remove").on("click", function(){
         $("#showup1").remove();
         $("#inbox").show();
       });

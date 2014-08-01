@@ -8,39 +8,39 @@ class UsersController < ApplicationController
   end
 
   def pref
-  	if params[:huffP] == "1"
+  	if params[:huffP] == "1" && current_user.content_providers.where('id'=> 1) == []
   		current_user.content_providers << ContentProvider.find(1)
-  	else
+  	elsif params[:huffP] != "1"
   		current_user.content_providers.delete(ContentProvider.find(1))
   	end
-  	if params[:mash] == "1"
+  	if params[:mash] == "1" && current_user.content_providers.where('id'=> 2) == []
   		current_user.content_providers << ContentProvider.find(2)
-  	else
+  	elsif params[:mash] != "1"
   		current_user.content_providers.delete(ContentProvider.find(2))
   	end
-  	if params[:bloomberg] == "1"
+  	if params[:bloomberg] == "1" && current_user.content_providers.where('id'=> 3) == []
   		current_user.content_providers << ContentProvider.find(3)
-  	else
+  	elsif params[:bloomberg] != "1"
   		current_user.content_providers.delete(ContentProvider.find(3))
   	end
-  	if params[:wired] == "1"
+  	if params[:wired] == "1" && current_user.content_providers.where('id'=> 4) == []
   		current_user.content_providers << ContentProvider.find(4)
-  	else
+  	elsif params[:wired] != "1"
   		current_user.content_providers.delete(ContentProvider.find(4))
   	end
-  	if params[:nyt] == "1"
+  	if params[:nyt] == "1" && current_user.content_providers.where('id'=> 5) == []
   		current_user.content_providers << ContentProvider.find(5)
-  	else
+  	elsif params[:nyt] != "1"
   		current_user.content_providers.delete(ContentProvider.find(5))
   	end			
- 	if params[:npr] == "1"
+ 	if params[:npr] == "1" && current_user.content_providers.where('id'=> 6) == []
   		current_user.content_providers << ContentProvider.find(6)
-  	else
+  	elsif params[:npr] != "1"
   		current_user.content_providers.delete(ContentProvider.find(6))
   	end
-  	if params[:jcrew] == "1"
+  	if params[:jcrew] == "1" && current_user.content_providers.where('id'=> 7) == []
   		current_user.content_providers << ContentProvider.find(7)
-  	else
+  	elsif params[:jcrew] != "1"
   		current_user.content_providers.delete(ContentProvider.find(7))
   	end
   
