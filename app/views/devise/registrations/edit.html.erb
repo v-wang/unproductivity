@@ -1,3 +1,29 @@
+<h2> Choose your content providers </h2>
+<%= form_tag("/preference", method: "post") do %>
+<%= check_box_tag(:huffP) %>
+<%= label_tag(:huffP, "Huffington Post") %>
+<%= check_box_tag(:mash) %>
+<%= label_tag(:mash, "Mashable") %>
+
+<%= check_box_tag(:bloomberg) %>
+<%= label_tag(:bloomberg, "Bloomberg") %>
+
+<%= check_box_tag(:wired) %>
+<%= label_tag(:wired, "Wired") %>
+
+<%= check_box_tag(:nyt) %>
+<%= label_tag(:nyt, "New York Times") %>
+
+<%= check_box_tag(:npr) %>
+<%= label_tag(:npr, "NPR") %>
+
+<%= check_box_tag(:jcrew) %>
+<%= label_tag(:jcrew, "J Crew Women") %>
+<%= submit_tag("Save") %>
+<% end %>
+
+<br>
+<br>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>

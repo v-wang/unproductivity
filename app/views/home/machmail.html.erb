@@ -67,8 +67,29 @@
             <li class="dropdownTitle">Folders</li>
               <ul>
                 <% @user.content_providers.each do | source | %>
-                    <li class="dropdownItem"><a href="/home/mach/wired"><%= source.name %></a></li>
-
+                <!-- EACH WITH INDEX?? -->
+                      <% if source.name == "Wired" %>
+                        <% abbrev = "wired" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
+                      <% elsif source.name == "New York Times" %>
+                        <% abbrev = "nyt" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
+                      <% elsif source.name == "NPR" %>
+                        <% abbrev = "NPR" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
+                      <% elsif source.name == "Bloomberg" %>
+                        <% abbrev = "bloomberg" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
+                      <% elsif source.name == "Mashable" %>
+                        <% abbrev = "mash" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
+                      <% elsif source.name == "Huffington Post" %>
+                        <% abbrev = "huffP" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
+                        <% elsif source.name == "J Crew" %>
+                        <% abbrev = "jcrew" %>
+                        <%= "<li class='dropdownItem'><a href='/home/mach/#{abbrev}'>#{source.name}</a></li>".html_safe %>
+                      <% end %>
                 <% end %>
                <!-- <li class="dropdownItem"><a href="/home/mach/huffP">Huffington Post</a></li>
                 <li class="dropdownItem"><a href="/home/mach/mash">Mashable</a></li>

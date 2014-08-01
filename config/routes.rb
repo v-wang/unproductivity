@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get 'users/update'
 
+  post '/preference' => 'users#pref'
 
  get 'home/machlook/:provider' => 'home#index'
 

@@ -31,7 +31,37 @@ $(document).on('ready page:load', function(){
       // $("#remove").on("click", function(){
       //   $("#showup").remove();
       //   $("#inbox").show();
-    
+
+  
+  // $(".dropdownTitle").is(":hidden");
+  
+  // This slides the sidebar menus up and down
+  $(".dropdownTitle").click(function(){
+    if ( $(this).next("ul").is(":hidden") ) {
+      $(this).next("ul").slideDown();
+    } else {
+      $(this).next("ul").slideUp();
+    }
+  });
+
+  // adds active state to sidebar folders
+  $(".dropdownItem a").each(function() {   
+    if (this.href == window.location.href) {
+        $(this).addClass("dropdownItemActive a");
+    }
+  });
+
+  // checks all the checkboxes
+  $("#selectAll").click(function(){
+    $(".myCheckbox").prop("checked",$("#selectAll").prop("checked"))
+  })
+
+  // lets user return to inbox view when logo is clicked
+  $("#remove2").on("click", function(){
+        $("#showup1").remove();
+        $("#inbox").show();
+  });
+
 function clickable() {
     var stlg = parseInt($(".articles:last")[0].id.split("_")[1]) + 1;
     var myArray = [];
@@ -48,7 +78,7 @@ function clickable() {
       
       $(myArray[j]).on("click", function(){
         $("#showup").remove();
-        $("#outlook_email_body").append("<img src='/images/ajax-loader.gif' id='loader' >");
+        $("#outlook_email_body").append("<div id='loader'><img src='/images/ajax-loader.gif' ><h4> Loading, please be patient </h4> </div>");
         $.ajax({
                 type: 'POST',
                 beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
@@ -91,12 +121,16 @@ function clickable() {
     };
 
 
+
     
 
 
 
 
     if(window.location.pathname.split("/")[2] == "machlook"){
+
+    if(window.location.pathname.split("/")[2] == "machlook" || window.location.pathname.split("/")[2] == "index"){
+
     clickable();
     }else{
      
