@@ -31,6 +31,7 @@ $(document).on('ready page:load', function(){
       // $("#remove").on("click", function(){
       //   $("#showup").remove();
       //   $("#inbox").show();
+
   
   // $(".dropdownTitle").is(":hidden");
   
@@ -62,8 +63,13 @@ $(document).on('ready page:load', function(){
   });
 
 function clickable() {
-    var stlg = $(".articles").length;
+    var stlg = parseInt($(".articles:last")[0].id.split("_")[1]) + 1;
     var myArray = [];
+    if(window.location.pathname.split("/").length < 4 || window.location.pathname.split("/")[3] == ""){
+      var provider = "huffP"
+    }else{
+      var provider = window.location.pathname.split("/")[3]
+    };
     if(stlg>0){
     for(i=0; i<stlg; i++){
       myArray.push("#art_"+i)
@@ -76,8 +82,8 @@ function clickable() {
         $.ajax({
                 type: 'POST',
                 beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-                url: '/show',
-                data: {article_select: $(this)[0].id.split("_")[1]},
+                url: '/machlookshow',
+                data: {article_select: $(this)[0].id.split("_")[1], prov: provider},
               });
 
         
@@ -115,7 +121,16 @@ function clickable() {
     };
 
 
+
+    
+
+
+
+
+    if(window.location.pathname.split("/")[2] == "machlook"){
+
     if(window.location.pathname.split("/")[2] == "machlook" || window.location.pathname.split("/")[2] == "index"){
+
     clickable();
     }else{
      

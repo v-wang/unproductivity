@@ -1,6 +1,6 @@
 <div id="showup" >
 
-<h3><%= @title %> </h3>
+<h3><%= @title.html_safe %> </h3>
 <%= "<i id='photoTrigger' class='fa fa-picture-o fa-lg'></i>".html_safe   %>
 <%= "<img id='showupimg' src='#{@image}'>".html_safe   %>
 

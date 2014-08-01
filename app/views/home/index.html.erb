@@ -30,21 +30,21 @@
 
   			$("#bookmarks_nav_dropdown").hide();
 			if($("#bookmarks_nav_dropdown").is(':hidden')){
-				$("#bookmarks_nav_button").mouseenter(function(){
+				$("#bookmarks_nav_button").click(function(){
 				$("#filter_nav_dropdown").hide();	
-				$("#bookmarks_nav_dropdown").animate({height:"show"});
+				$("#bookmarks_nav_dropdown").slideToggle();
 				});
 			};
 			$("#bookmarks_nav_dropdown").mouseleave(function(){
 				$(this).hide()});
 
-			$("#filter_nav_dropdown").hide();
-			$("#filter_nav_button").mouseenter(function(){
-				$("#bookmarks_nav_dropdown").hide()
-				$("#filter_nav_dropdown").animate({height:"show"});
-			});
-			$("#filter_nav_dropdown").mouseleave(function(){
-				$(this).hide()});
+			// $("#filter_nav_dropdown").hide();
+			// $("#filter_nav_button").mouseenter(function(){
+			// 	$("#bookmarks_nav_dropdown").hide()
+			// 	$("#filter_nav_dropdown").animate({height:"show"});
+			// });
+			// $("#filter_nav_dropdown").mouseleave(function(){
+			// 	$(this).hide()});
 
 			// if($("#bookmarks_nav_dropdown").is(':visible')){
 			// 	$("#filter_nav_dropdown").hide()};
@@ -56,26 +56,32 @@
 			
   			$("#panic_box").mouseenter(function(){
   				$("#outlook_maincontainer").fadeOut();
+  				$("#blackscreen").fadeIn();
   				// $(body).addClass("panic_box_cursor");
   			});
+
+  			$("#star").click(function(){
+  				$("#showup").slideToggle();
+  			})
   		});
   	</script>
   	
 </head>
 <body id="panic_box_cursor">
+<div id="blackscreen"></div>
 <div id="panic_box"></div>
 	<div id="outlook_maincontainer">
 		<div id="outlook_topbar">
 			<img src="/images/outlook_topbar.png" alt="">
-			<!-- <div id="bookmarks_nav_button"></div>
+			<div id="bookmarks_nav_button"></div>
 			<div id="bookmarks_nav_dropdown">
 				<ul>
-					<li>test</li>
-					<li>test2</li>
-					<li>test3</li>
+					<li><a href="/home/mach">Switch Template</a></li>
+					<li><a href="/users/edit">Edit Profile</a></li>
+					<li><a href="/sign_out"><%= link_to "Log Out", destroy_user_session_path, method: "delete" %></a></li>
 				</ul>
 			</div>
-			<div id="filter_nav_button"></div>
+			<!-- <div id="filter_nav_button"></div>
 			<div id="filter_nav_dropdown">
 				<ul>
 					<li>test</li>
@@ -164,11 +170,12 @@
 			</div>
 			<div id="outlook_mainbody_content">
 				<div id="outlook_email_topbar">
-					<h2>This is a test title</h2>
-					<a href=""><img src="/images/star.png" alt=""></a>
+					<h2>TITLE GOES HERE</h2>
+					<img id="star"src="/images/star.png" alt="">
 					<h3>Reddit</h3>
-					<h4>Sent: TEST TEST</h4>
-					<h4>To: TEST</h4>
+					<h4>Sent: <%= @user.email.split("@")[0] %>@machmail.com</h4>
+					<% fullname = "#{@user.fname} " + "#{@user.lname}"%>
+					<h4>To: <%= fullname %></h4>
 					
 				</div>
 				<div id="outlook_email_body">

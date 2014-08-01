@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'home/mach/:provider' => 'home#machmail'
 
-  post '/show' => 'home#show'
+  post '/machlookshow' => 'home#show'
 
   get '/sign_out' => "users#destroy"
 
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   post '/preference' => 'users#pref'
 
  get 'home/machlook/:provider' => 'home#index'
- post '/machlookshow' => 'home#show'
+
 
   devise_for :users
   root 'home#machmail'
