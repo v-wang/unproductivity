@@ -1,10 +1,15 @@
 Welcome to MachMail!
 
+
 To make sure everything is functional:
 1. open terminal
+
 2. rake db:migrate
+
 3. Open application directory
+
 4. open rails console
+
 5. require './content_providers.rb'
 
 
