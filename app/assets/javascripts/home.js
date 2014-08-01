@@ -87,7 +87,7 @@ function clickable() {
               });
 
         
-      })
+      });
     }}};
 
     
@@ -116,8 +116,8 @@ function clickable() {
               });
 
         
-      })
-    }}
+      });
+    }};
     };
 
 
@@ -132,3 +132,5 @@ function clickable() {
 
 
  });
+
+

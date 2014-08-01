@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
- before_action :authenticate_user!
+ before_action :authenticate_user!, :except => [:homepage, :index]
+
+
+  def homepage
+  end
 
   def index
   end
