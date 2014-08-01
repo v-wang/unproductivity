@@ -31,8 +31,8 @@ $(document).on('ready page:load', function(){
       // $("#remove").on("click", function(){
       //   $("#showup").remove();
       //   $("#inbox").show();
-
-  $(".dropdownTitle").is(":hidden");
+  
+  // $(".dropdownTitle").is(":hidden");
   
   // This slides the sidebar menus up and down
   $(".dropdownTitle").click(function(){
@@ -57,9 +57,9 @@ $(document).on('ready page:load', function(){
 
   // lets user return to inbox view when logo is clicked
   $("#remove2").on("click", function(){
-        $("#showup").remove();
+        $("#showup1").remove();
         $("#inbox").show();
-      });
+  });
 
 function clickable() {
     var stlg = $(".articles").length;
