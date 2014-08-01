@@ -87,7 +87,7 @@ function clickable() {
               });
 
         
-      })
+      });
     }}};
 
     
@@ -116,8 +116,8 @@ function clickable() {
               });
 
         
-      })
-    }}
+      });
+    }};
     };
 
 
@@ -127,7 +127,7 @@ function clickable() {
 
 
 
-    if(window.location.pathname.split("/")[2] == "machlook"){
+  
 
     if(window.location.pathname.split("/")[2] == "machlook" || window.location.pathname.split("/")[2] == "index"){
 
@@ -140,3 +140,5 @@ function clickable() {
 
 
  });
+
+

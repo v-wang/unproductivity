@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
  before_action :authenticate_user!
 
+  def homepage
+  end
+
   def index
   end
 
@@ -43,7 +46,7 @@ class UsersController < ApplicationController
   		else
   		current_user.content_providers.delete(ContentProvider.find(7))
   	end
-  end
+  
   @user = current_user
 
   redirect_to root_path
