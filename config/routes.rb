@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'machlook' => 'home#index'
 
-  get 'machmail' => 'home#machmail'
+  get '/home/mach' => 'home#machmail'
 
   get 'home/mach/:provider' => 'home#machmail'
 
