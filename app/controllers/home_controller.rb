@@ -7,6 +7,7 @@ class HomeController < ApplicationController
    
     if user_signed_in?
     @user = current_user
+    
     else
     @user = nil
     redirect_to '/users/sign_in'
@@ -287,7 +288,7 @@ end
     end	
     if @url && pro != "jcrew"
 	    body_json = open("http://api.diffbot.com/v3/article?token=8de6c6c3e5fcec13f7b786b833bb35f7&url=#{@url}")
-	    @body = JSON.parse(body_json.read)
+	    @body = JSON.parse(body_json.read)	    
 	    if @body["objects"][0]["html"]
 	    @text = @body["objects"][0]["html"]
 		else
@@ -331,7 +332,7 @@ end
 
     puts "**************#{pro} & #{handle}***********"
 
-
+  
   end
 
 

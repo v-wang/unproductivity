@@ -44,8 +44,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= @user.email.split("@")[0] %>@machmail.com <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="machlook">Switch Template </a></li>
-                  <li><a href="homepage">Tutorial</a></li>
+                  <li><a href="/machlook">Switch Template </a></li>
+                  <li><a href="/homepage">Tutorial</a></li>
                   <li><a href="/users/edit">Edit Profile</a></li>
                   <li class="divider"></li>
                   <li><%= link_to "Log Out", destroy_user_session_path, method: "delete" %></li>
@@ -150,7 +150,7 @@
                     <% @articles.each do |art| %>
                     <% if art != "" && art[0..3] != "More" && art.length > 19 %>
                     <%= "<tr><td><input type='checkbox' class='myCheckbox'></td>".html_safe %>
-                    <%= "<td>#{['Abraham Lincoln','Gerald Ford','George Washington','John Adams','Bill Clinton','George Bush','Jimmy Carter','Barack Obama','Ronald Regan', 'Lyndon Johnson', 'Jack Kennedy','Mark Twain'][rand(12)]}</td>".html_safe %>
+                    <%= "<td>#{['Abraham Lincoln','Gerald Ford','George Washington','John Adams','Bill Clinton','George Bush','Jimmy Carter','Barack Obama','Ronald Regan', 'Lyndon Johnson', 'Jack Kennedy','Mark Twain','George Orwell'][rand(13)]}</td>".html_safe %>
                     <%= "<td id='art_#{i}' class='articles'> #{art} </td>".html_safe %>
                     <%= "<td>#{Time.now.asctime[4..9]}</td> </tr>".html_safe %>
                      
