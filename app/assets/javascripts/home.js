@@ -31,39 +31,15 @@ $(document).on('ready page:load', function(){
       // $("#remove").on("click", function(){
       //   $("#showup").remove();
       //   $("#inbox").show();
-
-  $(".dropdownTitle").is(":hidden");
-  
-  // This slides the sidebar menus up and down
-  $(".dropdownTitle").click(function(){
-    if ( $(this).next("ul").is(":hidden") ) {
-      $(this).next("ul").slideDown();
-    } else {
-      $(this).next("ul").slideUp();
-    }
-  });
-
-  // adds active state to sidebar folders
-  $(".dropdownItem a").each(function() {   
-    if (this.href == window.location.href) {
-        $(this).addClass("dropdownItemActive a");
-    }
-  });
-
-  // checks all the checkboxes
-  $("#selectAll").click(function(){
-    $(".myCheckbox").prop("checked",$("#selectAll").prop("checked"))
-  })
-
-  // lets user return to inbox view when logo is clicked
-  $("#remove2").on("click", function(){
-        $("#showup").remove();
-        $("#inbox").show();
-      });
-
+    
 function clickable() {
-    var stlg = $(".articles").length;
+    var stlg = parseInt($(".articles:last")[0].id.split("_")[1]) + 1;
     var myArray = [];
+    if(window.location.pathname.split("/").length < 4 || window.location.pathname.split("/")[3] == ""){
+      var provider = "huffP"
+    }else{
+      var provider = window.location.pathname.split("/")[3]
+    };
     if(stlg>0){
     for(i=0; i<stlg; i++){
       myArray.push("#art_"+i)
@@ -76,8 +52,8 @@ function clickable() {
         $.ajax({
                 type: 'POST',
                 beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-                url: '/show',
-                data: {article_select: $(this)[0].id.split("_")[1]},
+                url: '/machlookshow',
+                data: {article_select: $(this)[0].id.split("_")[1], prov: provider},
               });
 
         
@@ -115,7 +91,12 @@ function clickable() {
     };
 
 
-    if(window.location.pathname.split("/")[2] == "index"){
+    
+
+
+
+
+    if(window.location.pathname.split("/")[2] == "machlook"){
     clickable();
     }else{
      

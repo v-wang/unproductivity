@@ -7,9 +7,14 @@ html, body {
 
 
 
-/*#panic_box_cursor {
-	cursor:none;
-}*/
+#blackscreen {
+	
+	display: none;
+	width:100%;
+	height: 100vh;
+	width: 100vw;
+	background-color: black;
+}
 
 #panic_box {
 	width: 80px;
@@ -53,30 +58,36 @@ html, body {
 }
 
 #bookmarks_nav_button {
-	width: 59px;
-	height: 54px;
+	width: 65px;
+	height: 22px;
 	position: absolute;
-	left:660px;
-	top:101px;	
+	left:456px;
+	top:0px;	
 	/*border:1px solid black;*/
 }
 
 #bookmarks_nav_button:hover {
 	cursor:pointer;
-	background-color: rgba(0,0,0,0.2);
+	/*background-color: rgba(0,0,0,0.2);*/
 }
 
 #bookmarks_nav_dropdown {
 	width: 160px;
-	border:1px solid black;
+	border:1px solid rgb(200,200,200);
 	position: absolute;
-	left:590px;
-	top:160px;	
+	right:170px;
+	left:460px;	
+	top:23px;
 	z-index:4;
-	background-color: rgb(200,200,200);
+	background-color: white;
+	padding:10px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 25px;
+	letter-spacing: 1px;
 }
 
-#filter_nav_button {
+/*#filter_nav_button {
 	width: 59px;
 	height: 54px;
 	position: absolute;
@@ -107,7 +118,7 @@ html, body {
 #filter_nav_dropdown ul, #bookmarks_nav_dropdown ul {
 	list-style: square;
 	margin-left: 10px;
-}
+}*/
 
 
 /*### END SCREENSHOTS ELEMENTS ###
@@ -162,7 +173,7 @@ html, body {
 	margin-top: 5px;
 }
 
-#outlook_email_topbar a {
+#outlook_email_topbar img {
 	float: right;
 
 }
@@ -171,6 +182,10 @@ html, body {
 	width: 25px;
 	height: 25px;
 	margin-right: 20px;
+}
+
+#outlook_email_topbar img:hover {
+	cursor: pointer;
 }
 
 #outlook_email_body {
@@ -248,7 +263,7 @@ html, body {
 	position: relative;
 	bottom:2px;
 	margin-left: 5px;
-	width:120px;
+	width:160px;
 }
 
 .email_article_source img {

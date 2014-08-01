@@ -3,8 +3,14 @@ require 'JSON'
 class HomeController < ApplicationController
 	before_action :authenticate_user!
   def index
+    
    
-
+    if user_signed_in?
+    @user = current_user
+    else
+    @user = nil
+    redirect_to '/users/sign_in'
+    end
     cnn="http://www.cnn.com"
     huffP = "http://www.huffingtonpost.com"
     nyt = "http://www.nytimes.com"
@@ -69,6 +75,8 @@ class HomeController < ApplicationController
 
 
   def show 
+
+   
   	nyt = "http://www.nytimes.com"
     wired = "http://www.wired.com"
     bloomberg = "http://www.bloomberg.com"
