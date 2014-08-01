@@ -258,10 +258,10 @@ end
      	handle = "div.plus_prod_details"
      end
     if pro != "bloomberg" && pro != "npr" && pro != "mash" && pro != "jcrew"
-   	 url = news_provider.css(handle)[selected][:href]
+   	 @url = news_provider.css(handle)[selected][:href]
 	elsif pro == "npr"
 		if news_provider.css(handle)[selected].css("a")
-		url = news_provider.css(handle)[selected].css("a")[1][:href]
+		@url = news_provider.css(handle)[selected].css("a")[1][:href]
 	    end
 	elsif pro == "mash"
 		if selected < 10
@@ -276,17 +276,17 @@ end
     	end
 	    mash = open("http://mashable.com/stories.json")
 	    mmash = JSON.parse(mash.read)
-	    url = mmash[mash_category][mash_selected]["link"]
+	    @url = mmash[mash_category][mash_selected]["link"]
 	elsif pro == "jcrew"
 	   if news_provider.css(handle)[selected].css("a")
-		url = news_provider.css(handle)[selected].css("a")[0][:href]
+		@url = news_provider.css(handle)[selected].css("a")[0][:href]
 	   end	
 	
     else
-   		url = bloomberg + news_provider.css(handle)[selected][:href]
+   		@url = bloomberg + news_provider.css(handle)[selected][:href]
     end	
-    if url && pro != "jcrew"
-	    body_json = open("http://api.diffbot.com/v3/article?token=8de6c6c3e5fcec13f7b786b833bb35f7&url=#{url}")
+    if @url && pro != "jcrew"
+	    body_json = open("http://api.diffbot.com/v3/article?token=8de6c6c3e5fcec13f7b786b833bb35f7&url=#{@url}")
 	    @body = JSON.parse(body_json.read)
 	    if @body["objects"][0]["html"]
 	    @text = @body["objects"][0]["html"]
@@ -303,8 +303,8 @@ end
 		else
 			@image = "http://placekitten.com/g/300/400"
 		end
-    elsif url && pro == "jcrew"
-    	body_json = open("http://api.diffbot.com/v3/product?token=8de6c6c3e5fcec13f7b786b833bb35f7&url=#{url}")
+    elsif @url && pro == "jcrew"
+    	body_json = open("http://api.diffbot.com/v3/product?token=8de6c6c3e5fcec13f7b786b833bb35f7&url=#{@url}")
 	    @body = JSON.parse(body_json.read)
 	    if @body["objects"][0]["text"]
 	    @price = @body["objects"][0]["offerPrice"]

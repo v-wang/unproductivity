@@ -1,13 +1,14 @@
 <div id='showup1' >
 <h4 class="remove">x</h4>
 <hr>
-<h3><%= @title %> </h3>
+<h3><%= @title %> </h3> 
 <h5>From: Jonathan Doe</h5>
 <h5>To: You, Joe, Jen, James, Janice</h5>
 <hr>
-<div class="emailIcons"><i class="fa fa-reply"></i> <i class="fa fa-reply-all"></i> <i class="fa fa-share"></i> <i class="fa fa-print"></i> <i class="fa fa-trash-o"></i></div>
+<div class="emailIcons"><i class="fa fa-reply"></i> <i class="fa fa-reply-all"></i> <i class="fa fa-share"></i> <i class="fa fa-print"></i> <i class="fa fa-trash-o"></i></div> 
 <hr>
 <%= "<i id='photoTrigger' class='fa fa-picture-o fa-lg'></i>".html_safe   %>
+<%= "<a href='#{@url}'> <i class='fa fa-paper-plane-o fa-lg'></i> </a>".html_safe %>
 <%= "<div class='articleImageShow'><img  src='#{@image}'></div>".html_safe   %>
 <%= "<h3> #{@price} </h3>".html_safe %>
 <%= @text.html_safe %>
