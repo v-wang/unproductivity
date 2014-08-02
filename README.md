@@ -27,7 +27,7 @@ To make sure everything is functional after clone:
 
 1. cd into directory
 
-2. rake db:migrate
+2. bundle install & rake db:migrate
 
 4. rails console
 
