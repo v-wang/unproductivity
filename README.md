@@ -31,7 +31,7 @@ To make sure everything is functional after clone:
 
 4. rails console
 
-5. require './content_providers.rb'
+5. require './news_provider.rb'
 
 6. rails server
 
