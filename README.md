@@ -31,9 +31,11 @@ To make sure everything is functional after clone:
 
 4. rails console
 
-5. require './news_provider.rb'
+5. require './news_provider.rb' & exit console
 
 6. rails server
+
+7. After login/signup, click "Add source" under Folders to add News source! 
 
 Have fun!
 
