@@ -1,20 +1,5 @@
 Welcome to MachMail!
 
-
-To make sure everything is functional:
-
-1. open terminal
-
-2. rake db:migrate
-
-3. open application directory
-
-4. open rails console
-
-5. require './content_providers.rb'
-
-6. run the app
-
 MachMail is a fake email client designed to emulate functional email clients.
 
 With two different "email templates" to choose from, users can 
@@ -22,6 +7,8 @@ covertly read articles from popular sites without being detected!
 
 Whether you are in a classroom or sitting in the office, let MachMail be 
 your premiere choice for slacking!
+
+Be sure to suggest a list of sites that you frequent in your slacking period, so we will add your favorites to your readling list!
 
 To get started, create a user and check out the tutorial to familariaze yourself
 with MachMails panic gestures.
@@ -34,6 +21,22 @@ desktop screen completely dark.
 This ultimate panic gesture serves as a last resort and is irreversible.
 Once this feature is toggled, the user must refresh the page before
 they continue slacking again.
+
+
+To make sure everything is functional after clone:
+
+1. cd into directory
+
+2. rake db:migrate
+
+4. rails console
+
+5. require './content_providers.rb'
+
+6. rails server
+
+Have fun!
+
 
 
 
